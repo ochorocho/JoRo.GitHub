@@ -1,0 +1,8 @@
+<f:for each="{repoList}" as="repo">
+    <div>
+        <f:link.external uri="{repo.url}" target="_blank">
+            {repo.name}<br>
+            {repo.description}
+        </f:link.external>
+    </div>
+</f:for>

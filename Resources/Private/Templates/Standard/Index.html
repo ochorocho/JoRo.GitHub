@@ -1,0 +1,19 @@
+<f:layout name="Default" />
+
+<f:section name="Title">GitHub Profile</f:section>
+
+<f:section name="Content">
+
+    <!-- REPOS -->
+    <h1>repoList</h1>
+    <f:render partial="Repos" arguments="{repoList: '{repoList}'}" />
+
+    <!-- ACTIVITY -->
+    <h1>activity</h1>
+    <f:render partial="Activity" arguments="{activities: '{activities}'}" />
+
+    <!-- DETAILS -->
+    <h1>DETAILS</h1>
+    <f:render partial="Details" arguments="{details: '{details}'}" />
+
+</f:section>

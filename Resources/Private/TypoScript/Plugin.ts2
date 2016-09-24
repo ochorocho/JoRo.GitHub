@@ -1,0 +1,12 @@
+# Configure Plugin for NEOS ... package, controller and action
+prototype(JoRo.GitHub:Plugin) < prototype(TYPO3.Neos:Plugin)
+prototype(JoRo.GitHub:Plugin) {
+    package = 'JoRo.GitHub'
+    controller = 'Standard'
+    action = 'index'
+}
+
+# Set a variable to access in controller
+prototype(JoRo.GitHub:Plugin) {
+    myNodeName = ${q(node).property('name')}
+}

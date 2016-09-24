@@ -1,0 +1,11 @@
+privilegeTargets:
+  TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+    'JoRo.GitHub:StandardControllerActions':
+      matcher: 'method(JoRo\GitHub\Controller\StandardController->(index)Action())'
+
+roles:
+  'TYPO3.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: 'JoRo.GitHub:StandardControllerActions'
+        permission: GRANT

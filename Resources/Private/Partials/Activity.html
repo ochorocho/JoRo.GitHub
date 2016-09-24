@@ -1,0 +1,34 @@
+<f:for each="{activities}" as="activity">
+    <f:if condition="{activity.type} == 'ForkEvent'">
+        <div>
+            {activity.payload.forkee.owner.login}
+        </div>
+    </f:if>
+
+
+    <f:if condition="{activity.type} == 'PullRequestEvent'">
+        <div>
+            {activity.payload.pull_request.title}
+        </div>
+    </f:if>
+
+    <f:if condition="{activity.type} == 'PushEvent'">
+        <div>
+            {activity.payload.ref}
+        </div>
+    </f:if>
+
+    <f:if condition="{activity.type} == 'CreateEvent'">
+        <div>
+            {activity.payload.ref}
+        </div>
+    </f:if>
+
+    <f:if condition="{activity.type} == 'IssuesEvent'">
+        <div>
+            {activity.repo.name}
+            | {activity.payload.issue.number}
+            | {activity.payload.issue.title}
+        </div>
+    </f:if>
+</f:for>

@@ -1,0 +1,2 @@
+# Auto include into any sites package
+include: Plugin.ts2
