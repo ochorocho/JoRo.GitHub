@@ -61,32 +61,8 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
         ]);
         $userEvents = $api->decode($response);
 
-        //\TYPO3\Flow\var_dump($userEvents);
+//        \TYPO3\Flow\var_dump($userEvents);
 
-        $activity = [];
-        /*
-        foreach ($userEvents as $event) {
-            switch ($event->type) {
-                case 'ForkEvent':
-                    $name = $event->payload->forkee->full_name;
-                    break;
-                case 'PullRequestEvent':
-                    $name = $event->payload->pull_request->title;
-                    break;
-                case 'PushEvent':
-                    $name = 'Pushed to ' . $event->payload->ref;
-                    break;
-                case 'CreateEvent':
-                    $name = $event->payload->ref;
-                    break;
-                case 'IssuesEvent':
-                case 'IssueCommentEvent':
-                    $name = $event->repo->name . '#' . $event->payload->issue->number . ' ' . $event->payload->issue->title;
-                    break;
-            }
-            array_push($activity, ['name' => $name, 'type' => $event->type]);
-        }
-        */
         $this->view->assign('activities', $userEvents);
 
         /*
@@ -96,7 +72,7 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
             'user' => $user,
         ]);
         $userDetails = $api->decode($response);
-        //\TYPO3\Flow\var_dump($userDetails);
+//        \TYPO3\Flow\var_dump($userDetails);
         $this->view->assign("details", $userDetails);
     }
 }
