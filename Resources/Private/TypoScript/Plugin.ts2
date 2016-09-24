@@ -4,6 +4,7 @@ prototype(JoRo.GitHub:Plugin) {
     package = 'JoRo.GitHub'
     controller = 'Standard'
     action = 'index'
+    myNodeName = "sadasdsad"
 }
 
 # Set a variable to access in controller

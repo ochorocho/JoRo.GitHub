@@ -4,3 +4,33 @@
   ui:
     label: 'GitHub API INFO'
     group: 'plugins'
+    icon: icon-map-marker
+    inspector:
+      groups:
+        BikeTour:
+          label: BikeTour
+          position: 1
+  options:
+    pluginViews:
+      BikeTour:
+        label: 'GitHub Anzeigen'
+        controllerActions:
+          JoRo\GithubDetails\Controller\AccountController:
+            - showAction
+  properties:
+    username:
+      type: string
+      defaultValue: 'GitHubUserName'
+      ui:
+        label: Username
+        inlineEditable: false
+        inspector:
+          group: BikeTour
+    token:
+      type: string
+      defaultValue: 'GitHub Auth Token'
+      ui:
+        label: Token
+        inlineEditable: false
+        inspector:
+          group: BikeTour
