@@ -18,10 +18,11 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
     public function indexAction()
     {
 
-        $myNodeName = $this->request->getInternalArgument('__myNodeName');
+        $id = $this->request->getInternalArgument('__id');
+
         $username = $this->request->getInternalArgument('__username');
         $token = $this->request->getInternalArgument('__token');
-        
+
         $api = new Github\Api;
 
         $token = new \Milo\Github\OAuth\Token($token);
@@ -74,5 +75,7 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
         $userDetails = $api->decode($response);
 //        \TYPOPO3\Flow\var_dump($userDetails);
         $this->view->assign("details", $userDetails);
+
+        $this->view->assign("id", $id);
     }
 }

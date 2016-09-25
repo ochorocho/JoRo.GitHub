@@ -4,16 +4,25 @@
 
 <f:section name="Content">
 
-    <!-- REPOS -->
-    <h1>repoList</h1>
-    <f:render partial="Repos" arguments="{repoList: '{repoList}'}" />
-
-    <!-- ACTIVITY -->
-    <h1>activity</h1>
-    <f:render partial="Activity" arguments="{activities: '{activities}'}" />
-
-    <!-- DETAILS -->
-    <h1>DETAILS</h1>
-    <f:render partial="Details" arguments="{details: '{details}'}" />
+    <ul class="tabs" data-tab role="tablist">
+        <li class="tab-title active" role="presentation"><a href="#details{id}" role="tab" tabindex="0"
+                                                            aria-selected="true" aria-controls="details{id}">DETAILS</a>
+        </li>
+        <li class="tab-title" role="presentation"><a href="#activity{id}" role="tab" tabindex="0" aria-selected="false"
+                                                     aria-controls="activity{id}">activity</a></li>
+        <li class="tab-title" role="presentation"><a href="#repoList{id}" role="tab" tabindex="0" aria-selected="false"
+                                                     aria-controls="repoList{id}">repoList</a></li>
+    </ul>
+    <div class="tabs-content">
+        <section role="tabpanel" aria-hidden="false" class="content active" id="details{id}">
+            <f:render partial="Details" arguments="{details: '{details}'}"/>
+        </section>
+        <section role="tabpanel" aria-hidden="true" class="content" id="activity{id}">
+            <f:render partial="Activity" arguments="{activities: '{activities}'}"/>
+        </section>
+        <section role="tabpanel" aria-hidden="true" class="content" id="repoList{id}">
+            <f:render partial="Repos" arguments="{repoList: '{repoList}'}"/>
+        </section>
+    </div>
 
 </f:section>
