@@ -2,7 +2,8 @@
     "description": "Add description here",
     "type": "neos-package",
     "require": {
-        "typo3/flow": "*"
+        "typo3/flow": "*",
+        "milo/github-api": "~1.4.0"
     },
     "name": "joro/github",
     "autoload": {
