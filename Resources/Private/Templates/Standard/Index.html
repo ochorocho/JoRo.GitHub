@@ -4,30 +4,33 @@
 
 <f:section name="Content">
 
-    <ul class="tabs" data-tab role="tablist">
-        <li class="tab-title active" role="presentation"><a href="#details{id}" role="tab" tabindex="0"
-                                                            aria-selected="true" aria-controls="details{id}">
-            <f:translate id="label.details"/>
-        </a></li>
-        <li class="tab-title" role="presentation"><a href="#activity{id}" role="tab" tabindex="0" aria-selected="false"
-                                                     aria-controls="activity{id}">
-            <f:translate id="label.activity"/>
-        </a></li>
-        <li class="tab-title" role="presentation"><a href="#repoList{id}" role="tab" tabindex="0" aria-selected="false"
-                                                     aria-controls="repoList{id}">
-            <f:translate id="label.repoList"/>
-        </a></li>
-    </ul>
-    <div class="tabs-content">
-        <section role="tabpanel" aria-hidden="false" class="content active" id="details{id}">
-            <f:render partial="Details" arguments="{details: '{details}'}"/>
-        </section>
-        <section role="tabpanel" aria-hidden="true" class="content" id="activity{id}">
-            <f:render partial="Activity" arguments="{activities: '{activities}'}"/>
-        </section>
-        <section role="tabpanel" aria-hidden="true" class="content" id="repoList{id}">
-            <f:render partial="Repos" arguments="{repoList: '{repoList}'}"/>
-        </section>
+    <div class="githubDetails">
+        <ul class="tabs" data-tab role="tablist">
+            <li class="tab-title active" role="presentation"><a href="#details{id}" role="tab" tabindex="0"
+                                                                aria-selected="true" aria-controls="details{id}">
+                <f:translate id="label.details"/>
+            </a></li>
+            <li class="tab-title" role="presentation"><a href="#activity{id}" role="tab" tabindex="0"
+                                                         aria-selected="false"
+                                                         aria-controls="activity{id}">
+                <f:translate id="label.activity"/>
+            </a></li>
+            <li class="tab-title" role="presentation"><a href="#repoList{id}" role="tab" tabindex="0"
+                                                         aria-selected="false"
+                                                         aria-controls="repoList{id}">
+                <f:translate id="label.repoList"/>
+            </a></li>
+        </ul>
+        <div class="tabs-content">
+            <section role="tabpanel" aria-hidden="false" class="content active" id="details{id}">
+                <f:render partial="Details" arguments="{details: '{details}'}"/>
+            </section>
+            <section role="tabpanel" aria-hidden="true" class="content" id="activity{id}">
+                <f:render partial="Activity" arguments="{activities: '{activities}'}"/>
+            </section>
+            <section role="tabpanel" aria-hidden="true" class="content" id="repoList{id}">
+                <f:render partial="Repos" arguments="{repoList: '{repoList}'}"/>
+            </section>
+        </div>
     </div>
-
 </f:section>

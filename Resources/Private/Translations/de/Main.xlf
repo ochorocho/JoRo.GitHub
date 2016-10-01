@@ -14,6 +14,10 @@
 				<source>My Repositories</source>
                 <target>Meine Repos</target>
 			</trans-unit>
+            <trans-unit id="label.blog" xml:space="preserve">
+				<source>Blog</source>
+                <target>Blog</target>
+			</trans-unit>
         </body>
     </file>
 </xliff>

@@ -1,0 +1,28 @@
+.th .githubName {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    line-height: 1rem;
+    padding: 5px 8px;
+    color: #000000;
+}
+
+.githubDetails .th {
+    position: relative;
+}
+
+.githubDetails .tabs-content .content {
+    margin-top: 0px;
+    padding: 20px;
+}
+
+.githubDetails .tabs-content .content .th, .githubDetails .tabs-content .content .th img {
+    display: block;
+    width: 100%;
+}
+
+.ex100 {
+    display: block;
+}

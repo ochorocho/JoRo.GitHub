@@ -11,6 +11,9 @@
             <trans-unit id="label.repoList" xml:space="preserve">
 				<source>My Repositories</source>
 			</trans-unit>
+            <trans-unit id="label.blog" xml:space="preserve">
+				<source>Blog</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>
