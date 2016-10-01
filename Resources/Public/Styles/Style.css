@@ -23,6 +23,35 @@
     width: 100%;
 }
 
-.ex100 {
+.githubDetails .ex100 {
     display: block;
+}
+
+.githubDetails .label.commit {
+    background: none;
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.githubDetails .label.commit {
+    color: #000000;
+}
+
+.githubDetails .even {
+    background: rgba();
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    text-overflow: "...";
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.githubDetails .even {
+    background-color: rgba(102, 102, 102, 0.9);
+}
+
+.githubDetails .odd {
+    background-color: rgba(102, 102, 102, 0.7);
 }

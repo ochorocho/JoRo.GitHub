@@ -1,34 +1,45 @@
-<f:for each="{activities}" as="activity">
-    <f:if condition="{activity.type} == 'ForkEvent'">
-        <div>
-            {activity.payload.forkee.owner.login}
-        </div>
-    </f:if>
+<f:for each="{activities}" as="activity" iteration="i">
+    <div class="{f:if(condition: i.isOdd, then: 'odd', else: 'even')}">
+        <f:if condition="{activity.type} == 'ForkEvent'">
+            <i class="icon fi-trash"></i> Forked
+            <f:link.external title="{commit.sha}" uri="{activity.payload.forkee.repo.url}" target="_blank">
+                {activity.payload.forkee.repo.name}
+            </f:link.external>
+        </f:if>
+        <f:if condition="{activity.type} == 'PullRequestEvent'">
+            <i class="icon fi-trash"></i> Pull Request on
+            <f:link.external title="{commit.sha}" uri="{activity.payload.pull_request.html_url}" target="_blank">
+                {activity.repo.name}
+            </f:link.external>
+            <div>
+                <div class="label commit">{activity.payload.pull_request.title}</div>
+            </div>
+        </f:if>
+        <f:if condition="{activity.type} == 'PushEvent'">
+            <i class="icon fi-trash"></i> Pushed to {activity.payload.ref}
+            <div>
+                <f:for each="{activity.payload.commits}" as="commit">
+                    <f:link.external title="{commit.sha}" uri="{commit.url}" target="_blank" class="label commit">
+                        <f:format.crop maxCharacters="7" append=" -">{commit.sha}</f:format.crop>
+                        {commit.message}
+                    </f:link.external>
+                </f:for>
+            </div>
+        </f:if>
 
+        <f:if condition="{activity.type} == 'CreateEvent'">
+            <i class="icon fi-trash"></i> Created {activity.payload.ref} in {activity.repo.name}
+        </f:if>
 
-    <f:if condition="{activity.type} == 'PullRequestEvent'">
-        <div>
-            {activity.payload.pull_request.title}
-        </div>
-    </f:if>
-
-    <f:if condition="{activity.type} == 'PushEvent'">
-        <div>
-            {activity.payload.ref}
-        </div>
-    </f:if>
-
-    <f:if condition="{activity.type} == 'CreateEvent'">
-        <div>
-            {activity.payload.ref}
-        </div>
-    </f:if>
-
-    <f:if condition="{activity.type} == 'IssuesEvent'">
-        <div>
-            {activity.repo.name}
-            | {activity.payload.issue.number}
-            | {activity.payload.issue.title}
-        </div>
-    </f:if>
+        <f:if condition="{activity.type} == 'IssuesEvent'">
+            <i class="icon fi-trash"></i> Issue
+            <f:link.external title="{commit.sha}" uri="{activity.payload.issue.html_url}" target="_blank">
+                #{activity.payload.issue.number}
+            </f:link.external>
+            {activity.payload.action} in
+            <f:link.external uri="{activity.payload.issue.repository_url}" target="_blank">
+                {activity.repo.name}
+            </f:link.external>
+        </f:if>
+    </div>
 </f:for>
