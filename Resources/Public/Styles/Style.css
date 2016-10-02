@@ -54,4 +54,9 @@
     font-size: 48px;
     clear: both;
     display: block;
+    margin-bottom: 0.3rem;
+}
+
+.tooltip .label {
+    margin: 2px 0;
 }

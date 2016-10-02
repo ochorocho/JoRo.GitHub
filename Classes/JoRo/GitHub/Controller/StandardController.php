@@ -23,6 +23,7 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
         $username = $this->request->getInternalArgument('__username');
         $token = $this->request->getInternalArgument('__token');
         $activityCount = $this->request->getInternalArgument('__activityCount');
+        $repoCount = $this->request->getInternalArgument('__repoCount');
 
         $api = new Github\Api;
 
@@ -47,6 +48,23 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
                 unset($repos[$i]);
             }
             $i++;
+            $responseLang = $api->get('/repos/:owner/:repo/languages', [
+                'owner' => $user,
+                'repo' => $repo->name,
+            ]);
+            $repoLang = $api->decode($responseLang);
+            $total = 0;
+            foreach($repoLang as $lang) {
+                $total = $total + $lang;
+            }
+
+            // CALC PERCENTAGE
+            $languages = [];
+            foreach($repoLang as $key => $value) {
+                $percent = ($value * 100) / $total;
+                array_push($languages, ['name' => $key, 'percent' => round($percent, 2)]);
+            }
+            $repo->languages = $languages;
         }
 
         $repoList = [];
@@ -74,6 +92,7 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
         $this->view->assign("details", $userDetails);
 
         $this->view->assign("id", $id);
-        $this->view->assign("activityCount", $this->request->getInternalArgument('__activityCount') - 1);
+        $this->view->assign("activityCount", $activityCount - 1);
+        $this->view->assign("repoCount", $repoCount - 1);
     }
 }

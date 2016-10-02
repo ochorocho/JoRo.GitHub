@@ -1,8 +1,14 @@
-<f:for each="{repoList}" as="repo">
-    <div>
-        <f:link.external uri="{repo.url}" target="_blank">
-            {repo.name}<br>
-            {repo.description}
-        </f:link.external>
-    </div>
+<f:for each="{repoList}" as="repo" iteration="i">
+    <f:if condition="{i.index} <= {repoCount}">
+        <a href="{repo.html_url}" target="_blank" class="button block has-tip"
+                data-tooltip aria-haspopup="true" title="{repo.description}
+                <f:for each="{repo.languages}" as="lang">
+                    <f:format.htmlentities><div class="label">{lang.name}: {lang.percent}%</div></f:format.htmlentities>
+                </f:for>
+                ">
+            <i class="icon {repo.language}"></i>
+            <div class="ellipsis">{repo.name}</div>
+        </a>
+
+    </f:if>
 </f:for>

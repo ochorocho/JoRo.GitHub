@@ -7,12 +7,12 @@
     icon: icon-map-marker
     inspector:
       groups:
-        BikeTour:
-          label: BikeTour
+        ghOptions:
+          label: Options
           position: 1
   options:
     pluginViews:
-      BikeTour:
+      ghOptions:
         label: 'GitHub Anzeigen'
         controllerActions:
           JoRo\GithubDetails\Controller\AccountController:
@@ -25,7 +25,7 @@
         label: Username
         inlineEditable: false
         inspector:
-          group: BikeTour
+          group: ghOptions
     token:
       type: string
       defaultValue: 'GitHub Auth Token'
@@ -33,7 +33,7 @@
         label: Token
         inlineEditable: false
         inspector:
-          group: BikeTour
+          group: ghOptions
     activityCount:
       type: integer
       defaultValue: '10'
@@ -41,4 +41,12 @@
         label: Activity count
         inlineEditable: false
         inspector:
-          group: BikeTour
+          group: ghOptions
+    repoCount:
+      type: integer
+      defaultValue: '10'
+      ui:
+        label: Repo count
+        inlineEditable: false
+        inspector:
+          group: ghOptions
