@@ -3,7 +3,6 @@
 <f:section name="Title">GitHub Profile</f:section>
 
 <f:section name="Content">
-
     <div class="githubDetails">
         <ul class="tabs" data-tab role="tablist">
             <li class="tab-title active" role="presentation"><a href="#details{id}" role="tab" tabindex="0"
@@ -26,7 +25,8 @@
                 <f:render partial="Details" arguments="{details: '{details}'}"/>
             </section>
             <section role="tabpanel" aria-hidden="true" class="content" id="activity{id}">
-                <f:render partial="Activity" arguments="{activities: '{activities}'}"/>
+                <f:render partial="Activity"
+                          arguments="{activities: '{activities}', activityCount: '{activityCount}'}"/>
             </section>
             <section role="tabpanel" aria-hidden="true" class="content" id="repoList{id}">
                 <f:render partial="Repos" arguments="{repoList: '{repoList}'}"/>

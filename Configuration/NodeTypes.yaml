@@ -34,3 +34,11 @@
         inlineEditable: false
         inspector:
           group: BikeTour
+    activityCount:
+      type: integer
+      defaultValue: '10'
+      ui:
+        label: Activity count
+        inlineEditable: false
+        inspector:
+          group: BikeTour

@@ -22,6 +22,7 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
 
         $username = $this->request->getInternalArgument('__username');
         $token = $this->request->getInternalArgument('__token');
+        $activityCount = $this->request->getInternalArgument('__activityCount');
 
         $api = new Github\Api;
 
@@ -38,8 +39,6 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
             'user' => $user,
         ]);
         $repos = $api->decode($response);
-
-        //\TYPO3\Flow\var_dump($repos);
 
         $i = 0;
 
@@ -63,7 +62,6 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
             'user' => $user,
         ]);
         $userEvents = $api->decode($response);
-//        \TYPO3\Flow\var_dump($userEvents);
         $this->view->assign('activities', $userEvents);
 
         /*
@@ -73,9 +71,9 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
             'user' => $user,
         ]);
         $userDetails = $api->decode($response);
-//        \TYPOPO3\Flow\var_dump($userDetails);
         $this->view->assign("details", $userDetails);
 
         $this->view->assign("id", $id);
+        $this->view->assign("activityCount", $this->request->getInternalArgument('__activityCount') - 1);
     }
 }

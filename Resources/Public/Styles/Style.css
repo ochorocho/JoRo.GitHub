@@ -44,14 +44,14 @@
     overflow: hidden;
 }
 
-.githubDetails .even {
-    background-color: rgba(200, 200, 200, 0.9);
+.button.block {
+    color: #ffffff;
+    width: 160px;
+    font-size: 0.7rem;
 }
 
-.githubDetails .odd {
-    background-color: rgba(255, 255, 255, 0.6);
-}
-
-.githubDetails .even, .githubDetails .odd {
-    padding: 10px 5px;
+.button.block i {
+    font-size: 48px;
+    clear: both;
+    display: block;
 }
