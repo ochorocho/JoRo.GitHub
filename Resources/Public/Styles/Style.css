@@ -37,10 +37,6 @@
     color: #000000;
 }
 
-.githubDetails .even {
-    background: rgba();
-}
-
 .ellipsis {
     text-overflow: ellipsis;
     text-overflow: "...";
@@ -49,9 +45,13 @@
 }
 
 .githubDetails .even {
-    background-color: rgba(102, 102, 102, 0.9);
+    background-color: rgba(200, 200, 200, 0.9);
 }
 
 .githubDetails .odd {
-    background-color: rgba(102, 102, 102, 0.7);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.githubDetails .even, .githubDetails .odd {
+    padding: 10px 5px;
 }
