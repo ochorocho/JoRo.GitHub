@@ -40,6 +40,8 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
         ]);
         $repos = $api->decode($response);
 
+        //\TYPO3\Flow\var_dump($repos);
+
         $i = 0;
 
         foreach ($repos as $repo) {
@@ -62,6 +64,7 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
             'user' => $user,
         ]);
         $userEvents = $api->decode($response);
+//        \TYPO3\Flow\var_dump($userEvents);
         $this->view->assign('activities', $userEvents);
 
         /*
@@ -71,6 +74,7 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
             'user' => $user,
         ]);
         $userDetails = $api->decode($response);
+//        \TYPOPO3\Flow\var_dump($userDetails);
         $this->view->assign("details", $userDetails);
 
         $this->view->assign("id", $id);
