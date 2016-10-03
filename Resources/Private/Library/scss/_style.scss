@@ -1,10 +1,28 @@
 .githubDetails {
-    .th {
+    .gh-tab {
+        i {
+            font-size: 40px;
+            margin: -12px auto;
+        }
+    }
+
+    ul.tabs {
+        background-color: #EFEFEF;
+    }
+    .avatar {
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-top: 6px;
         position: relative;
+        display: block;
+        img {
+            position: relative;
+            margin: -5px auto;
+        }
         .githubName {
             position: absolute;
             background-color: rgba(255, 255, 255, 0.5);
-            bottom: 0px;
+            bottom: 4px;
             left: 0px;
             right: 0px;
             line-height: 1rem;
@@ -14,7 +32,7 @@
     }
     .tabs-content .content {
         margin-top: 0px;
-        padding: 20px;
+        padding: 6px 0;
     }
     .tabs-content .content .th, .tabs-content .content .th img {
         display: block;
@@ -35,16 +53,19 @@
         white-space: nowrap;
         overflow: hidden;
     }
-    .button.block {
-        color: #ffffff;
-        width: 160px;
-        font-size: 0.7rem;
-        i {
-            font-size: 48px;
-            clear: both;
-            display: block;
-            margin-bottom: 0.3rem;
+    .button {
+        &.block {
+            color: #ffffff;
+            width: 100%;
+            font-size: 0.7rem;
+            i {
+                font-size: 48px;
+                clear: both;
+                display: block;
+                margin-bottom: 0.3rem;
+            }
         }
+        margin-bottom: 0;
     }
     .tooltip .label {
         margin: 2px 0;

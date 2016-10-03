@@ -1,5 +1,6 @@
+<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-5">
 <f:for each="{activities}" as="activity" iteration="i">
-
+    <li>
     <f:if condition="{i.index} <= {activityCount}">
         <f:if condition="{activity.type} == 'ForkEvent'">
             <a href="{activity.repo.url}" target="_blank" data-tooltip aria-haspopup="true" class="button block has-tip"
@@ -82,4 +83,7 @@
             </a>
         </f:if>
     </f:if>
+    </li>
+
 </f:for>
+</ul>

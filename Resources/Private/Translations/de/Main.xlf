@@ -2,10 +2,6 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file original="" product-name="JoRo.GitHub" source-language="de" datatype="plaintext">
         <body>
-            <trans-unit id="label.details" xml:space="preserve">
-				<source>Details</source>
-                <target>Details</target>
-			</trans-unit>
             <trans-unit id="label.activity" xml:space="preserve">
 				<source>Activity</source>
                 <target>Aktivität</target>

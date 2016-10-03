@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 				destCss: 'tmp/',
 		        options: {
 					fontFilename: 'icon',
-					relativeFontPath: '/_Resources/Static/Packages/JoRo.GitHub/Fonts/',
+					relativeFontPath: '../Fonts/',
 				    templateOptions: {
 				        baseClass: 'icon',
 				        classPrefix: ''
@@ -41,8 +41,6 @@ module.exports = function(grunt) {
 				options: {
 					shorthandCompacting: true,
 					roundingPrecision: -1,
-					expand: false,
-					report: "gzip"
 				},
 				files: {
 					'../../Public/Styles/Style.css': ['tmp/*.css']
@@ -57,7 +55,7 @@ module.exports = function(grunt) {
 			},
 			sass: {
 				files: 'scss/*.scss',
-				tasks: ['sass', 'webfont', 'cssmin:']
+				tasks: ['webfont', 'sass', 'cssmin:build']
 			},
 		},
 	});
