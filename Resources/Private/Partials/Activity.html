@@ -25,7 +25,7 @@
             </a>
         </f:if>
         <f:if condition="{activity.type} == 'PushEvent'">
-            <div data-tooltip aria-haspopup="true" class="button block has-tip" title="
+            <a href="https://www.github.com/{activity.repo.name}/commits" target="_blank" data-tooltip aria-haspopup="true" class="button block has-tip" title="
                 ... to {activity.repo.name}
                 <f:for each="{activity.payload.commits}" as="commit">
             <div>
@@ -40,7 +40,7 @@
         ">
         <i class="icon fi-repo-force-push"></i>
         Pushed
-        </div>
+        </a>
         </f:if>
 
         <f:if condition="{activity.type} == 'CreateEvent'">

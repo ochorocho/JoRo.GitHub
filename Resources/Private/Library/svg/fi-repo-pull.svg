@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="fi-repo-pull.svg">
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>repo-pull</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1520"
+     inkscape:window-height="933"
+     id="namedview13"
+     showgrid="false"
+     inkscape:zoom="0.60471146"
+     inkscape:cx="105.85029"
+     inkscape:cy="201.35991"
+     inkscape:window-x="73"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4">repo-pull</title>
+  <desc
+     id="desc6">Created with Sketch.</desc>
+  <defs
+     id="defs8" />
+  <g
+     id="Octicons"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="matrix(27.25219,0,0,27.25219,43.956756,41.159746)">
+    <g
+       id="repo-pull"
+       style="fill:#000000">
+      <path
+         d="m 13,8 0,-2 -6,0 0,-2 6,0 0,-2 3,3 -3,3 0,0 z M 4,2 3,2 3,3 4,3 4,2 4,2 Z m 7,5 1,0 0,6 c 0,0.55 -0.45,1 -1,1 L 6,14 6,16 4.5,14.5 3,16 3,14 1,14 C 0.45,14 0,13.55 0,13 L 0,1 C 0,0.45 0.45,0 1,0 l 10,0 c 0.55,0 1,0.45 1,1 l 0,2 -1,0 0,-2 -9,0 0,9 9,0 0,-3 0,0 z m 0,4 -10,0 0,2 2,0 0,-1 3,0 0,1 5,0 0,-2 0,0 z M 4,6 3,6 3,7 4,7 4,6 4,6 Z M 4,4 3,4 3,5 4,5 4,4 4,4 Z M 3,9 4,9 4,8 3,8 3,9 3,9 Z"
+         id="Shape"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

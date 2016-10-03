@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg17"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="issue-reopened.svg">
+  <metadata
+     id="metadata30">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>issue-reopened</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1046"
+     inkscape:window-height="815"
+     id="namedview28"
+     showgrid="false"
+     inkscape:zoom="0.4609375"
+     inkscape:cx="-86.288135"
+     inkscape:cy="-41.898305"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg17" />
+  <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title19">issue-reopened</title>
+  <desc
+     id="desc21">Created with Sketch.</desc>
+  <defs
+     id="defs23" />
+  <g
+     id="Octicons"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="matrix(35.246973,0,0,35.246973,6,-23.704599)">
+    <g
+       id="issue-reopened"
+       style="fill:#000000">
+      <path
+         d="M 8,9 6,9 6,4 8,4 8,9 8,9 Z m -2,3 2,0 0,-2 -2,0 0,2 0,0 z m 6.33,-2 -2.33,0 1.5,1.5 C 10.45,12.83 8.83,13.7 7,13.7 3.86,13.7 1.3,11.14 1.3,8 1.3,7.66 1.33,7.33 1.39,7 L 0.08,7 C 0.03,7.33 0,7.66 0,8 c 0,3.86 3.14,7 7,7 2.19,0 4.13,-1.02 5.41,-2.59 L 14,14 l 0,-4 -1.67,0 0,0 z M 1.67,6 4,6 2.5,4.5 C 3.55,3.17 5.17,2.3 7,2.3 c 3.14,0 5.7,2.56 5.7,5.7 0,0.34 -0.03,0.67 -0.09,1 l 1.31,0 C 13.97,8.67 14,8.34 14,8 14,4.14 10.86,1 7,1 4.81,1 2.87,2.02 1.59,3.59 L 0,2 l 0,4 1.67,0 0,0 z"
+         id="Shape"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:version="0.91 r13725" sodipodi:docname="TheQtCompany_logo_2.svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512.002px"
+	 viewBox="0 0 512 512.002" enable-background="new 0 0 512 512.002" xml:space="preserve">
+<sodipodi:namedview  id="namedview16" bordercolor="#666666" pagecolor="#ffffff" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" showgrid="false" inkscape:zoom="1.1138643" inkscape:cx="270.58047" inkscape:cy="174.65092" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-maximized="1" inkscape:current-layer="svg2" inkscape:window-height="801" inkscape:window-y="-8" inkscape:window-width="1536" inkscape:window-x="-8">
+	</sodipodi:namedview>
+<defs>
+	<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="6" y="65" width="502" height="368.351">
+		
+			<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
+		<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
+		<feBlend  in="source" in2="back" mode="normal"/>
+	</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="6" y="65" width="502" height="368.351" id="SVGID_1_">
+	<g filter="url(#Adobe_OpacityMaskFilter)">
+	</g>
+</mask>
+<g mask="url(#SVGID_1_)">
+	<g>
+		<g>
+			<path id="path6_9_" d="M74.998,65H508v298.581c-23.253,23.329-46.582,46.582-69.967,69.77H6V133.878
+				C28.906,110.832,52.006,87.959,74.998,65z"/>
+			<g enable-background="new    ">
+				<path fill="#FFFFFF" d="M109.19,314.85c-23.04,0-39.212-6.203-48.517-18.609s-13.957-31.937-13.957-58.597
+					c0-26.657,4.687-46.447,14.068-59.373c9.377-12.922,25.512-19.384,48.406-19.384c22.891,0,39.025,6.462,48.406,19.384
+					c9.377,12.926,14.068,32.753,14.068,59.483c0,32.788-7.754,54.869-23.262,66.24l18.388,29.687l-27.914,13.07l-19.938-32.566
+					C117.46,314.628,114.209,314.85,109.19,314.85z M84.71,276.745c4.354,7.681,12.517,11.52,24.48,11.52s20.122-3.839,24.48-11.52
+					c4.354-7.678,6.536-20.676,6.536-38.991c0-18.312-2.216-31.604-6.646-39.877c-4.431-8.27-12.555-12.406-24.369-12.406
+					c-11.818,0-19.938,4.137-24.369,12.406c-4.431,8.273-6.646,21.565-6.646,39.877C78.175,256.069,80.352,269.067,84.71,276.745z"
+					/>
+				<path fill="#FFFFFF" d="M197.804,312.191V161.544h52.062l26.584,109.883l26.585-109.883h52.062v150.647h-30.572v-116.53h-3.323
+					l-29.465,109.883h-30.572L231.7,195.662h-3.323v116.53H197.804z"/>
+				<path fill="#FFFFFF" d="M473.616,312.191h-85.735V161.544h30.572v123.619h55.163V312.191z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
