@@ -1,5 +1,5 @@
 {
-    "description": "Add description here",
+    "description": "Display parts of your GitHub profile on your NEOS website",
     "type": "neos-package",
     "license": "GPL-3.0+",
     "require": {
