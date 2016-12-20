@@ -1,6 +1,7 @@
 {
     "description": "Add description here",
     "type": "neos-package",
+    "license": "GPL-3.0+",
     "require": {
         "typo3/flow": "*",
         "milo/github-api": "~1.4.0"

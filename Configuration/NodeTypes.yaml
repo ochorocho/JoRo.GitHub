@@ -7,9 +7,15 @@
     icon: icon-map-marker
     inspector:
       groups:
-        ghOptions:
-          label: Options
+        githubAccount:
+          label: Account
           position: 1
+        displayCount:
+          label: Display
+          position: 2
+        responsive:
+          label: Responsive
+          position: 2
   options:
     pluginViews:
       ghOptions:
@@ -25,7 +31,7 @@
         label: Username
         inlineEditable: false
         inspector:
-          group: ghOptions
+          group: githubAccount
     token:
       type: string
       defaultValue: 'GitHub Auth Token'
@@ -33,7 +39,7 @@
         label: Token
         inlineEditable: false
         inspector:
-          group: ghOptions
+          group: githubAccount
     activityCount:
       type: integer
       defaultValue: '10'
@@ -41,7 +47,7 @@
         label: Activity count
         inlineEditable: false
         inspector:
-          group: ghOptions
+          group: displayCount
     repoCount:
       type: integer
       defaultValue: '10'
@@ -49,4 +55,27 @@
         label: Repo count
         inlineEditable: false
         inspector:
-          group: ghOptions
+          group: displayCount
+    small:
+      type: integer
+      defaultValue: '4'
+      ui:
+        label: Small
+        inspector:
+          group: responsive
+    medium:
+      type: integer
+      defaultValue: '4'
+      ui:
+        label: Medium
+        inlineEditable: false
+        inspector:
+          group: responsive
+    large:
+      type: integer
+      defaultValue: '4'
+      ui:
+        label: Large
+        inlineEditable: false
+        inspector:
+          group: responsive

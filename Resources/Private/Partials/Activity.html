@@ -1,4 +1,4 @@
-<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-5">
+<ul class="small-block-grid-{small} medium-block-grid-{medium} large-block-grid-{large}">
 <f:for each="{activities}" as="activity" iteration="i">
     <li>
     <f:if condition="{i.index} <= {activityCount}">
@@ -7,7 +7,7 @@
                title="
                 ... {activity.repo.name}
                 ">
-                <i class="icon fi-repo-forked"></i>
+                <i class="gh-icon fi-repo-forked"></i>
                 Forked
             </a>
             </f:if>
@@ -21,7 +21,7 @@
             </div>
             </f:format.htmlentities>
             ">
-            <i class="icon fi-repo-pull"></i>
+            <i class="gh-icon fi-repo-pull"></i>
             Pull Request
             </a>
         </f:if>
@@ -39,7 +39,7 @@
             </div>
         </f:for>
         ">
-        <i class="icon fi-repo-force-push"></i>
+        <i class="gh-icon fi-repo-force-push"></i>
         Pushed
         </a>
         </f:if>
@@ -51,7 +51,7 @@
                        title="
                                 ... {activity.repo.name} created
                                 ">
-                        <i class="icon fi-repo"></i>
+                        <i class="gh-icon fi-repo"></i>
                         Repository
                     </a>
                 </f:then>
@@ -60,7 +60,7 @@
                        title="
                                 ... created {activity.payload.ref} in {activity.repo.name}
                                 ">
-                        <i class="icon fi-git-branch"></i> {activity.payload.ref_type}
+                        <i class="gh-icon fi-git-branch"></i> {activity.payload.ref_type}
                     </a>
                 </f:else>
             </f:if>
@@ -70,7 +70,7 @@
                class="button block has-tip" title="
                         #{activity.payload.issue.number} {activity.payload.action} in {activity.repo.name}
                         ">
-                <i class="icon fi-issue-{activity.payload.action}"></i>
+                <i class="gh-icon fi-issue-{activity.payload.action}"></i>
                 Issue
             </a>
         </f:if>
@@ -78,7 +78,7 @@
             <a href="{activity.repo.url}" target="_blank" data-tooltip aria-haspopup="true" class="button block has-tip" title="
                             ... {activity.payload.action} on {activity.repo.name}
                             ">
-                <i class="icon fi-light-bulb"></i>
+                <i class="gh-icon fi-light-bulb"></i>
                 Watch
             </a>
         </f:if>

@@ -1,4 +1,4 @@
-<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-5">
+<ul class="small-block-grid-{small} medium-block-grid-{medium} large-block-grid-{large}">
     <f:for each="{repoList}" as="repo" iteration="i">
         <li>
             <f:if condition="{i.index} <= {repoCount}">
@@ -8,7 +8,7 @@
                             <f:format.htmlentities><div class="label">{lang.name}: {lang.percent}%</div></f:format.htmlentities>
                         </f:for>
                         ">
-                    <i class="icon {repo.language}"></i>
+                    <i class="gh-icon {repo.language}"></i>
                     <div class="ellipsis">{repo.name}</div>
                 </a>
             </f:if>

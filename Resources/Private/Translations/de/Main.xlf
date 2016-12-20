@@ -7,8 +7,8 @@
                 <target>Aktivität</target>
 			</trans-unit>
             <trans-unit id="label.repoList" xml:space="preserve">
-				<source>My Repositories</source>
-                <target>Meine Repos</target>
+				<source>Repositories</source>
+                <target>Repositories</target>
 			</trans-unit>
             <trans-unit id="label.blog" xml:space="preserve">
 				<source>Blog</source>

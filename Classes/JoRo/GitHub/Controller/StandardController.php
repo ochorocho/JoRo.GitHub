@@ -24,6 +24,9 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
         $token = $this->request->getInternalArgument('__token');
         $activityCount = $this->request->getInternalArgument('__activityCount');
         $repoCount = $this->request->getInternalArgument('__repoCount');
+        $small = $this->request->getInternalArgument('__small');
+        $medium = $this->request->getInternalArgument('__medium');
+        $large = $this->request->getInternalArgument('__large');
 
         $api = new Github\Api;
 
@@ -94,5 +97,10 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
         $this->view->assign("id", $id);
         $this->view->assign("activityCount", $activityCount - 1);
         $this->view->assign("repoCount", $repoCount - 1);
+        $this->view->assignMultiple([
+            'small' => $small,
+            'medium' => $medium,
+            'large' => $large,
+        ]);
     }
 }

@@ -6,7 +6,7 @@
 				<source>Activity</source>
 			</trans-unit>
             <trans-unit id="label.repoList" xml:space="preserve">
-				<source>My Repositories</source>
+				<source>Repositories</source>
 			</trans-unit>
             <trans-unit id="label.blog" xml:space="preserve">
 				<source>Blog</source>
