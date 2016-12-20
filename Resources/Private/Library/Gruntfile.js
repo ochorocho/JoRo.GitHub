@@ -16,10 +16,10 @@ module.exports = function(grunt) {
 		        dest: '../../Public/Fonts/',
 				destCss: 'tmp/',
 		        options: {
-					fontFilename: 'icon',
+					fontFilename: 'gh-icon',
 					relativeFontPath: '../Fonts/',
 				    templateOptions: {
-				        baseClass: 'icon',
+				        baseClass: 'gh-icon',
 				        classPrefix: ''
 				    },
 		        }
