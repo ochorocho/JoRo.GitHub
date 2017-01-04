@@ -1,7 +1,7 @@
 <ul class="small-block-grid-{small} medium-block-grid-{medium} large-block-grid-{large}">
 <f:for each="{activities}" as="activity" iteration="i">
-    <li>
     <f:if condition="{i.index} <= {activityCount}">
+        <li>
         <f:if condition="{activity.type} == 'ForkEvent'">
             <a href="{activity.repo.url}" target="_blank" data-tooltip aria-haspopup="true" class="button block has-tip"
                title="
@@ -10,7 +10,7 @@
                 <i class="gh-icon fi-repo-forked"></i>
                 Forked
             </a>
-            </f:if>
+        </f:if>
         <f:if condition="{activity.type} == 'PullRequestEvent'">
             <a href="{activity.payload.pull_request.html_url}" target="_blank" data-tooltip aria-haspopup="true"
                class="button block has-tip" title="
@@ -28,6 +28,8 @@
         <f:if condition="{activity.type} == 'PushEvent'">
             <a href="https://www.github.com/{activity.repo.name}/commits" target="_blank" data-tooltip aria-haspopup="true" class="button block has-tip" title="
                 ... to {activity.repo.name}
+            <f:format.htmlentities><div class="labelWrap"></f:format.htmlentities>
+
                 <f:for each="{activity.payload.commits}" as="commit">
             <div>
                 <f:format.htmlentities>
@@ -37,8 +39,10 @@
                         </span>
                 </f:format.htmlentities>
             </div>
-        </f:for>
-        ">
+            </f:for>
+            <f:format.htmlentities></div></f:format.htmlentities>
+
+            ">
         <i class="gh-icon fi-repo-force-push"></i>
         Pushed
         </a>
@@ -82,8 +86,8 @@
                 Watch
             </a>
         </f:if>
+        </li>
     </f:if>
-    </li>
 
 </f:for>
 </ul>

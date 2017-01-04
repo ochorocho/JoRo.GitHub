@@ -75,10 +75,17 @@
         }
         margin-bottom: 0;
     }
+    .tabs dd > a, .tabs .tab-title > a {
+        padding: 0.9rem 1rem;
+    }
+}
+
+.labelWrap {
+    padding: 0.4rem 0 0 0 !important;
 }
 
 .label.commit{
-    margin: 2px 0;
+    margin: 0 !important;
     text-align: left;
     overflow: hidden !important;
     white-space: normal !important;

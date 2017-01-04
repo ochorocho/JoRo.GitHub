@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 				destCss: 'tmp/',
 		        options: {
 					fontFilename: 'gh-icon',
+					fontFamilyName: 'gh-icon',
 					relativeFontPath: '../Fonts/',
 				    templateOptions: {
 				        baseClass: 'gh-icon',
