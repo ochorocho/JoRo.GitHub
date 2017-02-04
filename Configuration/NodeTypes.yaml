@@ -1,6 +1,6 @@
 'JoRo.GitHub:Plugin':
   superTypes:
-    'TYPO3.Neos:Plugin': TRUE
+    'Neos.Neos:Plugin': TRUE
   ui:
     label: 'GitHub API INFO'
     group: 'plugins'

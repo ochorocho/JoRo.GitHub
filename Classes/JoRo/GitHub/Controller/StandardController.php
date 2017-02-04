@@ -5,11 +5,11 @@ namespace JoRo\GitHub\Controller;
  * This file is part of the JoRo.GitHub package.
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use Milo\Github;
-use TYPO3\Flow\Error\Debugger;
+use Neos\Flow\Error\Debugger;
 
-class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController
+class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
 {
 
     /**
