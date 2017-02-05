@@ -18,15 +18,17 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
     public function indexAction()
     {
 
-        $id = $this->request->getInternalArgument('__id');
+        $arguments = $this->request->getInternalArgument('__node')->getNodeData()->getProperties();
 
-        $username = $this->request->getInternalArgument('__username');
-        $token = $this->request->getInternalArgument('__token');
-        $activityCount = $this->request->getInternalArgument('__activityCount');
-        $repoCount = $this->request->getInternalArgument('__repoCount');
-        $small = $this->request->getInternalArgument('__small');
-        $medium = $this->request->getInternalArgument('__medium');
-        $large = $this->request->getInternalArgument('__large');
+        $id = $this->request->getInternalArgument('id');
+
+        $username = $arguments['username'];
+        $token = $arguments['token'];
+        $activityCount = $arguments['activityCount'];
+        $repoCount = $arguments['repoCount'];
+        $small = $arguments['small'];
+        $medium = $arguments['medium'];
+        $large = $arguments['large'];
 
         $api = new Github\Api;
 
@@ -34,7 +36,13 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
 
         $api->setToken($token);
         $api->getToken();
+
+
         $user = $username;
+
+
+        $id = 1;
+
 
         /*
             GET OWN REPOS ONLY
