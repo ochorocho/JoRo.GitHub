@@ -1,0 +1,18 @@
+# Auto include into any sites package
+page = Page {
+    head {
+        stylesheets.GitHubDetails = Neos.Fusion:Tag {
+            @position = 'end 10'
+            tagName = 'link'
+            attributes {
+                media = 'all'
+                rel = 'stylesheet'
+                href = Neos.Fusion:ResourceUri {
+                    path = 'resource://JoRo.GitHub/Public/Styles/Style.css'
+                }
+            }
+        }
+    }
+}
+
+include: Plugin.fusion
