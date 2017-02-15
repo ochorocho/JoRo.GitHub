@@ -20,7 +20,7 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
 
         $arguments = $this->request->getInternalArgument('__node')->getNodeData()->getProperties();
 
-        $id = $this->request->getInternalArgument('id');
+        $id = $this->request->getInternalArgument('__node')->getNodeData()->getIdentifier();
 
         $username = $arguments['username'];
         $token = $arguments['token'];
@@ -29,6 +29,8 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $small = $arguments['small'];
         $medium = $arguments['medium'];
         $large = $arguments['large'];
+
+
 
         $api = new Github\Api;
 
@@ -39,10 +41,6 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
 
 
         $user = $username;
-
-
-        $id = 1;
-
 
         /*
             GET OWN REPOS ONLY
