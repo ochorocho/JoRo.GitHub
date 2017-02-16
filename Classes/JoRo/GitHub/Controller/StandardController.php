@@ -19,8 +19,9 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
     {
 
         $arguments = $this->request->getInternalArgument('__node')->getNodeData()->getProperties();
-
         $id = $this->request->getInternalArgument('__node')->getNodeData()->getIdentifier();
+
+        // \Neos\Flow\var_dump($arguments);
 
         $username = $arguments['username'];
         $token = $arguments['token'];
@@ -29,76 +30,82 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $small = $arguments['small'];
         $medium = $arguments['medium'];
         $large = $arguments['large'];
+        $layout = $arguments['layout'];
 
 
+        if(empty($username) || empty($token)) {
+            $access = false;
+        } else {
+            $access = true;
+            $api = new Github\Api;
+            $token = new \Milo\Github\OAuth\Token($token);
 
-        $api = new Github\Api;
 
-        $token = new \Milo\Github\OAuth\Token($token);
+            $api->setToken($token);
+            $api->getToken();
 
-        $api->setToken($token);
-        $api->getToken();
+            $user = $username;
 
-
-        $user = $username;
-
-        /*
-            GET OWN REPOS ONLY
-        */
-        $response = $api->get('/users/:user/repos', [
-            'user' => $user,
-        ]);
-        $repos = $api->decode($response);
-
-        $i = 0;
-
-        foreach ($repos as $repo) {
-            if ($repo->fork != null) {
-                unset($repos[$i]);
-            }
-            $i++;
-            $responseLang = $api->get('/repos/:owner/:repo/languages', [
-                'owner' => $user,
-                'repo' => $repo->name,
+            /*
+                GET OWN REPOS ONLY
+            */
+            $response = $api->get('/users/:user/repos', [
+                'user' => $user,
             ]);
-            $repoLang = $api->decode($responseLang);
-            $total = 0;
-            foreach($repoLang as $lang) {
-                $total = $total + $lang;
+
+            $repos = $api->decode($response);
+
+            $i = 0;
+
+            foreach ($repos as $repo) {
+                if ($repo->fork != null) {
+                    unset($repos[$i]);
+                }
+                $i++;
+                $responseLang = $api->get('/repos/:owner/:repo/languages', [
+                    'owner' => $user,
+                    'repo' => $repo->name,
+                ]);
+                $repoLang = $api->decode($responseLang);
+                $total = 0;
+                foreach($repoLang as $lang) {
+                    $total = $total + $lang;
+                }
+
+                // CALC PERCENTAGE
+                $languages = [];
+                foreach($repoLang as $key => $value) {
+                    $percent = ($value * 100) / $total;
+                    array_push($languages, ['name' => $key, 'percent' => round($percent, 2)]);
+                }
+                $repo->languages = $languages;
             }
 
-            // CALC PERCENTAGE
-            $languages = [];
-            foreach($repoLang as $key => $value) {
-                $percent = ($value * 100) / $total;
-                array_push($languages, ['name' => $key, 'percent' => round($percent, 2)]);
+            $repoList = [];
+            foreach ($repos as $repo) {
+                array_push($repoList, ['name' => $repo->name, 'description' => $repo->description, 'url' => $repo->html_url]);
             }
-            $repo->languages = $languages;
+            $this->view->assign('repoList', $repos);
+
+            /*
+                GET USER DETAILS
+            */
+            $response = $api->get('/users/:user/events', [
+                'user' => $user,
+            ]);
+            $userEvents = $api->decode($response);
+            $this->view->assign('activities', $userEvents);
+
+            /*
+                GET USER DETAILS
+            */
+            $response = $api->get('/users/:user/', [
+                'user' => $user,
+            ]);
+            $userDetails = $api->decode($response);
+            $this->view->assign("details", $userDetails);
+
         }
-
-        $repoList = [];
-        foreach ($repos as $repo) {
-            array_push($repoList, ['name' => $repo->name, 'description' => $repo->description, 'url' => $repo->html_url]);
-        }
-        $this->view->assign('repoList', $repos);
-
-        /*
-            GET USER DETAILS
-        */
-        $response = $api->get('/users/:user/events', [
-            'user' => $user,
-        ]);
-        $userEvents = $api->decode($response);
-        $this->view->assign('activities', $userEvents);
-
-        /*
-            GET USER DETAILS
-        */
-        $response = $api->get('/users/:user/', [
-            'user' => $user,
-        ]);
-        $userDetails = $api->decode($response);
-        $this->view->assign("details", $userDetails);
 
         $this->view->assign("id", $id);
         $this->view->assign("activityCount", $activityCount - 1);
@@ -107,6 +114,8 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
             'small' => $small,
             'medium' => $medium,
             'large' => $large,
+            'access' => $access,
+            'layout' => $layout
         ]);
     }
 }

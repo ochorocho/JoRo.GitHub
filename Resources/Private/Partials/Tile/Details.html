@@ -1,0 +1,33 @@
+<ul class="small-block-grid-2 medium-block-grid-2">
+    <li>
+        <f:link.external class="avatar" uri="{details.html_url}" target="_blank" >
+            <img class="th" src="{details.avatar_url}"/>
+            <div class="githubName">{details.login}</div>
+        </f:link.external>
+    </li>
+    <li>
+        <ul class="small-block-grid-2 medium-block-grid-2">
+            <li>
+                <f:link.external uri="{details.blog}" target="_blank" class="button block tiny ex100">
+                    <i class="gh-icon fi-link"></i>
+                    <f:translate id="label.blog"/>
+                </f:link.external>
+            </li>
+            <li>
+                <f:link.external title="Followers" uri="{details.html_url}/followers" target="_blank" class="button block tiny ex100">
+                    <i class="gh-icon fi-torsos-all"></i> {details.followers}
+                </f:link.external>
+            </li>
+            <li>
+                <f:link.external title="Gist" uri="https://gist.github.com/{details.login}" target="_blank" class="button block tiny ex100">
+                    <i class="gh-icon fi-align-left"></i> {details.public_gists}
+                </f:link.external>
+            </li>
+            <li>
+                <f:link.external title="Public Repositories" uri="https://www.github.com/{details.login}" target="_blank" class="button block tiny ex100">
+                    <i class="gh-icon fi-repo"></i> {details.public_repos}
+                </f:link.external>
+            </li>
+        </ul>
+    </li>
+</ul>

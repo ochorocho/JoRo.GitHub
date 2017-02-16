@@ -1,0 +1,19 @@
+<ul class="small-block-grid-{small} medium-block-grid-{medium} large-block-grid-{large}">
+    <f:for each="{repoList}" as="repo" iteration="i">
+            <f:if condition="{i.index} <= {repoCount}">
+                <li>
+                    <a href="{repo.html_url}" target="_blank" class="button block has-tip"
+                            data-tooltip aria-haspopup="true" title="{repo.description}
+                            <f:format.htmlentities><div class="labelWrap"></f:format.htmlentities>
+                            <f:for each="{repo.languages}" as="lang">
+                                <f:format.htmlentities><div class="label commit">{lang.name}: {lang.percent}%</div></f:format.htmlentities>
+                            </f:for>
+                            <f:format.htmlentities></div></f:format.htmlentities>
+                            ">
+                        <i class="gh-icon {repo.language}"></i>
+                        <div class="ellipsis">{repo.name}</div>
+                    </a>
+                </li>
+            </f:if>
+    </f:for>
+</ul>

@@ -1,4 +1,5 @@
 .githubDetails {
+
     .gh-tab {
         i {
             font-size: 40px;
@@ -78,6 +79,7 @@
     .tabs dd > a, .tabs .tab-title > a {
         padding: 0.9rem 1rem;
     }
+
 }
 
 .labelWrap {
@@ -91,3 +93,17 @@
     white-space: normal !important;
     display: inline-block !important;
 }
+
+.dialog {
+    i {
+        margin-right: 0.5rem !important;
+    }
+    .font40 {
+        font-size: 1.9rem !important;
+    }
+
+    .rotate180 {
+        transform: rotate(180deg);
+    }
+}
+

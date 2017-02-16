@@ -5,12 +5,4 @@ prototype(JoRo.GitHub:Plugin) {
     controller = 'Standard'
     action = 'index'
     id = ${node.identifier}
-    settings {
-        huhu = 'asdsad'
-    }
 }
-
-# Set a variable to access in controller
-#prototype(JoRo.GitHub:Plugin) {
-#myNodeName = ${q(node).property('identifier')}
-#}

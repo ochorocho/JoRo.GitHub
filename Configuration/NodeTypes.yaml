@@ -19,14 +19,29 @@
   options:
     pluginViews:
       ghOptions:
-        label: 'GitHub Anzeigen'
+        label: 'GitHub Tile'
         controllerActions:
-          JoRo\GithubDetails\Controller\AccountController:
-            - showAction
+          JoRo\GithHub\Controller\StandardController: ['index']
   properties:
+    layout:
+      type: string
+      defaultValue: 'Tile'
+      ui:
+        label: Layout
+        inlineEditable: false
+        inspector:
+          group: displayCount
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              Tile:
+                label: Tile
+              List:
+                label: List
+
     username:
       type: string
-      defaultValue: 'GitHubUserName'
+      defaultValue: 'GitHub Username'
       ui:
         label: Username
         inlineEditable: false
