@@ -16,9 +16,8 @@
         <f:if condition="{activity.type} == 'PullRequestEvent'">
             <div>
             <a href="{activity.payload.pull_request.html_url}" target="_blank" class="block">
-            <i class="gh-icon fi-repo-pull"></i>
-            Pull Request
-                ... on {activity.repo.name}
+                <i class="gh-icon fi-repo-pull"></i>
+                Pull Request on {activity.repo.name}
                 <f:format.htmlentities>
                     <div>
                         <div class=" label commit">{activity.payload.pull_request.title}</div>
@@ -51,19 +50,36 @@
 
         <f:if condition="{activity.type} == 'CreateEvent'">
             <li>
-                <f:if condition="{activity.payload.ref_type} == 'repository'">
-                    <f:then>
+                <f:switch expression="{activity.payload.ref_type}">
+                    <f:case value="repository">
                         <a href="{activity.repo.url}" target="_blank" class="block">
                             <i class="gh-icon fi-repo"></i>
                             Repository {activity.repo.name} created
                         </a>
-                    </f:then>
-                    <f:else>
-                        <a href="{activity.repo.url}" target="_blank" class="block">
-                            <i class="gh-icon fi-git-branch"></i> {activity.payload.ref_type} created {activity.payload.ref} in {activity.repo.name}
+                    </f:case>
+                    <f:case value="tag">
+                        <a href="https://github.com/{activity.repo.name}/releases/{activity.payload.ref_type}/{activity.payload.ref}" target="_blank" class="block">
+                            <i class="gh-icon fi-price-tag"></i> {activity.payload.ref_type} created {activity.payload.ref} in {activity.repo.name}
                         </a>
-                    </f:else>
-                </f:if>
+                        <f:if condition="{activity.payload.description}">
+                            <div>
+                                <span class="label commit">
+                                  {activity.payload.description}
+                                </span>
+                            </div>
+                        </f:if>
+                    </f:case>
+                    <f:defaultCase>
+                        <a href="https://github.com/{activity.repo.name}/releases/{activity.payload.ref_type}/{activity.payload.ref}" target="_blank" class="block">
+                            <i class="gh-icon"></i> {activity.payload.ref_type} created {activity.payload.ref} in {activity.repo.name}
+                        </a>
+                        <div>
+                            <span class="label commit">
+                              {activity.payload.issue.title}
+                            </span>
+                        </div>
+                    </f:defaultCase>
+                </f:switch>
             </li>
         </f:if>
         <f:if condition="{activity.type} == 'IssuesEvent'">
@@ -72,6 +88,11 @@
                     <i class="gh-icon fi-issue-{activity.payload.action}"></i>
                     Issue #{activity.payload.issue.number} {activity.payload.action} in {activity.repo.name}
                 </a>
+                <div>
+                    <span class="label commit">
+                      {activity.payload.issue.title}
+                    </span>
+                </div>
             </li>
         </f:if>
         <f:if condition="{activity.type} == 'WatchEvent'">

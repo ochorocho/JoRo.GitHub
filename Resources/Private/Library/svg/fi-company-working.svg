@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2" inkscape:version="0.91 r13725" sodipodi:docname="git-branch.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px"
+	 viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+<sodipodi:namedview  inkscape:window-maximized="0" inkscape:current-layer="svg2" inkscape:window-y="0" inkscape:window-x="0" inkscape:window-height="889" inkscape:window-width="942" inkscape:pageshadow="2" inkscape:pageopacity="0" id="namedview13" bordercolor="#666666" borderopacity="1" objecttolerance="10" pagecolor="#ffffff" gridtolerance="10" guidetolerance="10" showgrid="false" inkscape:cy="8" inkscape:cx="5" inkscape:zoom="0.32593203">
+	</sodipodi:namedview>
+<title  id="title4">git-branch</title>
+<desc  id="desc6">Created with Sketch.</desc>
+<g>
+	<path d="M284.749,191.983h37.018c2.815,0,5.12-2.304,5.12-5.12v-37.018c0-2.816-2.305-5.12-5.12-5.12h-37.018
+		c-2.816,0-5.12,2.304-5.12,5.12v37.018C279.629,189.679,281.933,191.983,284.749,191.983z"/>
+	<path d="M227.251,144.726h-37.022c-2.816,0-5.12,2.304-5.12,5.12v37.018c0,2.816,2.304,5.12,5.12,5.12h37.022
+		c2.816,0,5.12-2.304,5.12-5.12v-37.018C232.371,147.029,230.067,144.726,227.251,144.726z"/>
+	<path d="M284.749,270.754h37.018c2.815,0,5.12-2.304,5.12-5.119v-37.023c0-2.816-2.305-5.12-5.12-5.12h-37.018
+		c-2.816,0-5.12,2.304-5.12,5.12v37.023C279.629,268.45,281.933,270.754,284.749,270.754z"/>
+	<path d="M227.251,223.492h-37.022c-2.816,0-5.12,2.304-5.12,5.12v37.023c0,2.815,2.304,5.119,5.12,5.119h37.022
+		c2.816,0,5.12-2.304,5.12-5.119v-37.023C232.371,225.795,230.067,223.492,227.251,223.492z"/>
+	<path d="M227.251,302.258h-37.022c-2.816,0-5.12,2.304-5.12,5.119V344.4c0,2.816,2.304,5.12,5.12,5.12h37.022
+		c2.816,0,5.12-2.304,5.12-5.12v-37.023C232.371,304.566,230.067,302.258,227.251,302.258z"/>
+	<path d="M408.422,412.543h-10.634V71.074c0-2.816-2.304-5.12-5.12-5.12h-42.143V55.32c0-2.816-2.304-5.12-5.12-5.12H166.595
+		c-2.816,0-5.12,2.304-5.12,5.12v10.634h-42.138c-2.816,0-5.12,2.304-5.12,5.12v341.469h-10.639c-2.816,0-5.12,2.303-5.12,5.119
+		v37.018c0,2.816,2.304,5.12,5.12,5.12h304.844c2.816,0,5.12-2.304,5.12-5.12v-37.018
+		C413.542,414.846,411.233,412.543,408.422,412.543z M145.72,97.463h20.875H345.4h20.874v315.074h-39.383v-89.001
+		c0-3.036-2.483-5.519-5.52-5.519h-36.219c-3.036,0-5.52,2.482-5.52,5.519v89.001H145.72V97.463z"/>
+</g>
+</svg>

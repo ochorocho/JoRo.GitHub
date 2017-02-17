@@ -3,10 +3,8 @@
 <f:section name="Title">GitHub Profile</f:section>
 
 <f:section name="Content">
-
     <f:if condition="{access} == 1">
         <f:then>
-
             <div class="githubDetails {layout}">
                 <ul class="tabs gh-tab" data-tab role="tablist">
                     <li class="tab-title active" role="presentation"><a href="#details{id}" role="tab" tabindex="0"
@@ -25,19 +23,18 @@
                     </a></li>
                 </ul>
                 <div class="tabs-content">
-                    <section role="tabpanel" aria-hidden="false" class="content active" id="details{id}">
+                    <section role="tabpanel" aria-hidden="false" class="content active details" id="details{id}">
                         <f:render partial="{layout}/Details" arguments="{details: '{details}'}"/>
                     </section>
-                    <section role="tabpanel" aria-hidden="true" class="content" id="activity{id}">
+                    <section role="tabpanel" aria-hidden="true" class="content activity" id="activity{id}">
                         <f:render partial="{layout}/Activity"
                                   arguments="{activities: '{activities}', activityCount: '{activityCount}', small: '{small}', medium: '{medium}', large: '{large}'}"/>
                     </section>
-                    <section role="tabpanel" aria-hidden="true" class="content" id="repoList{id}">
+                    <section role="tabpanel" aria-hidden="true" class="content repoList" id="repoList{id}">
                         <f:render partial="{layout}/Repos" arguments="{repoList: '{repoList}', repoCount: '{repoCount}', small: '{small}', medium: '{medium}', large: '{large}'}"/>
                     </section>
                 </div>
             </div>
-
         </f:then>
         <f:else>
             <div data-alert class="alert-box alert dialog">

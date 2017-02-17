@@ -79,6 +79,16 @@
     .tabs dd > a, .tabs .tab-title > a {
         padding: 0.9rem 1rem;
     }
+    .font40 {
+        font-size: 1.9rem !important;
+    }
+
+    // LIST
+    &.List {
+        .expanded {
+            display: block;
+        }
+    }
 
 }
 
@@ -106,4 +116,3 @@
         transform: rotate(180deg);
     }
 }
-

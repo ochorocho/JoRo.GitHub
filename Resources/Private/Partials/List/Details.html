@@ -1,33 +1,46 @@
-<ul class="small-block-grid-2 medium-block-grid-2">
-    <li>
+<div class="row">
+    <div class="small-2 column">
         <f:link.external class="avatar" uri="{details.html_url}" target="_blank" >
             <img class="th" src="{details.avatar_url}"/>
             <div class="githubName">{details.login}</div>
         </f:link.external>
-    </li>
-    <li>
-        <ul class="small-block-grid-2 medium-block-grid-2">
-            <li>
-                <f:link.external uri="{details.blog}" target="_blank" class="button block tiny ex100">
-                    <i class="gh-icon fi-link"></i>
-                    <f:translate id="label.blog"/>
+    </div>
+    <div class="small-10 column">
+        <div class="row">
+            <div class="small-6 column">
+                <f:link.external uri="{details.blog}" target="_blank" class="expanded">
+                    <i class="gh-icon fi-link"></i> <f:translate id="label.blog"/>
                 </f:link.external>
-            </li>
-            <li>
-                <f:link.external title="Followers" uri="{details.html_url}/followers" target="_blank" class="button block tiny ex100">
-                    <i class="gh-icon fi-torsos-all"></i> {details.followers}
+
+                <f:link.external title="Followers" uri="{details.html_url}/followers" target="_blank" class="expanded">
+                    <i class="gh-icon fi-company-working"></i> {details.company}
                 </f:link.external>
-            </li>
-            <li>
-                <f:link.external title="Gist" uri="https://gist.github.com/{details.login}" target="_blank" class="button block tiny ex100">
-                    <i class="gh-icon fi-align-left"></i> {details.public_gists}
+
+                <f:link.external title="Followers" uri="{details.html_url}/followers" target="_blank" class="expanded">
+                    <i class="gh-icon fi-torsos-all"></i> {details.followers} Followers
                 </f:link.external>
-            </li>
-            <li>
-                <f:link.external title="Public Repositories" uri="https://www.github.com/{details.login}" target="_blank" class="button block tiny ex100">
-                    <i class="gh-icon fi-repo"></i> {details.public_repos}
+
+                <f:link.external title="Followers" uri="{details.html_url}/followers" target="_blank" class="expanded">
+                    <i class="gh-icon fi-graph-pie"></i> {details.disk_usage} MB disk usage
                 </f:link.external>
-            </li>
-        </ul>
-    </li>
-</ul>
+            </div>
+            <div class="small-6 column">
+                <f:link.external title="Gist" uri="https://gist.github.com/{details.login}" target="_blank" class="expanded">
+                    <i class="gh-icon fi-align-left"></i> {details.public_gists} Gists
+                </f:link.external>
+
+                <f:link.external title="Public Repositories" uri="https://www.github.com/{details.login}" target="_blank" class="expanded">
+                    <i class="gh-icon fi-repo"></i> {details.public_repos} Public Repositories
+                </f:link.external>
+
+                <f:link.external title="Public Repositories" uri="https://www.github.com/{details.login}" target="_blank" class="expanded">
+                    <i class="gh-icon fi-repo"></i> {details.collaborators} collaborators
+                </f:link.external>
+
+                <f:link.external title="Public Repositories" uri="https://www.github.com/{details.login}" target="_blank" class="expanded">
+                    <i class="gh-icon fi-repo"></i> {details.following} following
+                </f:link.external>
+            </div>
+        </div>
+    </div>
+</div>
