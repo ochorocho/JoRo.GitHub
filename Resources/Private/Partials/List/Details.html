@@ -21,7 +21,8 @@
                 </f:link.external>
 
                 <f:link.external title="Followers" uri="{details.html_url}/followers" target="_blank" class="expanded">
-                    <i class="gh-icon fi-graph-pie"></i> {details.disk_usage} MB disk usage
+                    <i class="gh-icon fi-graph-pie"></i>
+                    {details.disk_usage -> f:format.bytes(decimals: 2, decimalSeparator: ',', thousandsSeparator: ',')}
                 </f:link.external>
             </div>
             <div class="small-6 column">
@@ -34,11 +35,11 @@
                 </f:link.external>
 
                 <f:link.external title="Public Repositories" uri="https://www.github.com/{details.login}" target="_blank" class="expanded">
-                    <i class="gh-icon fi-repo"></i> {details.collaborators} collaborators
+                    <i class="gh-icon fi-torsos-male-female"></i> {details.collaborators} collaborators
                 </f:link.external>
 
                 <f:link.external title="Public Repositories" uri="https://www.github.com/{details.login}" target="_blank" class="expanded">
-                    <i class="gh-icon fi-repo"></i> {details.following} following
+                    <i class="gh-icon fi-arrow-right"></i> {details.following} following
                 </f:link.external>
             </div>
         </div>

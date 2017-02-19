@@ -103,8 +103,10 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
                 'user' => $user,
             ]);
             $userDetails = $api->decode($response);
-            $this->view->assign("details", $userDetails);
+            // CALC MEGABYTES TO BYTES ...
+            $userDetails->disk_usage = $userDetails->disk_usage * 1024 * 1024;
 
+            $this->view->assign("details", $userDetails);
         }
 
         $this->view->assign("id", $id);
