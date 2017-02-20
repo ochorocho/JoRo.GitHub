@@ -113,9 +113,9 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $this->view->assign("activityCount", $activityCount - 1);
         $this->view->assign("repoCount", $repoCount - 1);
         $this->view->assignMultiple([
-            'small' => $small,
-            'medium' => $medium,
-            'large' => $large,
+            'small' => $small - 1,
+            'medium' => $medium - 1,
+            'large' => $large - 1,
             'access' => $access,
             'layout' => $layout
         ]);

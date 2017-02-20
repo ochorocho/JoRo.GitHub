@@ -13,6 +13,18 @@ page = Page {
             }
         }
     }
+    body {
+        javascripts.GitHubDetailsJs = Neos.Fusion:Tag {
+            @position = 'end 20'
+            tagName = 'script'
+            attributes {
+                type = 'text/javascript'
+                src = Neos.Fusion:ResourceUri {
+                    path = 'resource://JoRo.GitHub/Public/JavaScript/app.js'
+                }
+            }
+        }
+    }
 }
 
 include: Plugin.fusion
