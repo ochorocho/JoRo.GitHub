@@ -1,122 +1,127 @@
 <div class="ghTile" data-small="{small}" data-medium="{medium}" data-large="{large}"> 
-<f:for each="{activities}" as="activity" iteration="i">
-    <f:if condition="{i.index} <= {activityCount}">
-        <f:if condition="{activity.type} == 'ForkEvent'">
-            <div class="item">
-                <a href="{activity.payload.forkee.html_url}" target="_blank" class="block">
-                    <i class="gh-icon fi-repo-forked"></i>
-                    Forked {activity.repo.name}
-                </a>
-                <div>
-                    <span class="label commit">
-                        {activity.payload.forkee.description}
-                    </span>
-                </div>
-            </div>
-        </f:if>
-        <f:if condition="{activity.type} == 'PullRequestEvent'">
-            <div class="item">
-            <a href="{activity.payload.pull_request.html_url}" target="_blank" class="block">
-                <i class="gh-icon fi-repo-pull"></i>
-                Pull Request on {activity.repo.name}
-                <f:format.htmlentities>
+    <f:for each="{activities}" as="activity" iteration="i">
+        <f:if condition="{i.index} <= {activityCount}">
+            <f:if condition="{activity.type} == 'ForkEvent'">
+                <div class="item">
+                    <a href="{activity.payload.forkee.html_url}" target="_blank" class="block">
+                        <i class="gh-icon fi-repo-forked"></i>
+                        Forked {activity.repo.name}
+                    </a>
                     <div>
-                        <div class=" label commit">{activity.payload.pull_request.title}</div>
+                        <span class="label commit">
+                            {activity.payload.forkee.description}
+                        </span>
                     </div>
-                </f:format.htmlentities>
-
-            </a>
-            </div>
-        </f:if>
-        <f:if condition="{activity.type} == 'PushEvent'">
-            <div class="item">
-                <a href="https://www.github.com/{activity.repo.name}/commits" target="_blank" class="block">
-                    <i class="gh-icon fi-repo-force-push"></i>
-                    Pushed to {activity.repo.name}
-                </a>
-                <div class="labelWrap">
-                    <f:for each="{activity.payload.commits}" as="commit">
-                        <div>
-                            <span class="label commit">
-                                <a href="https://www.github.com/{activity.repo.name}/commit/{commit.sha}">
-                                    <f:format.crop maxCharacters="7" append=" -">{commit.sha}</f:format.crop>
-                                </a>
-                                {commit.message}
-                            </span>
-                        </div>
-                    </f:for>
                 </div>
-            </div>
-        </f:if>
+            </f:if>
+            <f:if condition="{activity.type} == 'PullRequestEvent'">
+                <div class="item">
+                <a href="{activity.payload.pull_request.html_url}" target="_blank" class="block">
+                    <i class="gh-icon fi-repo-pull"></i>
+                    Pull Request on {activity.repo.name}
+                    <f:format.htmlentities>
+                        <div>
+                            <div class=" label commit">{activity.payload.pull_request.title}</div>
+                        </div>
+                    </f:format.htmlentities>
 
-        <f:if condition="{activity.type} == 'CreateEvent'">
-            <div class="item">
-                <f:switch expression="{activity.payload.ref_type}">
-                    <f:case value="repository">
-                        <a href="{activity.repo.url}" target="_blank" class="block">
-                            <i class="gh-icon fi-repo"></i>
-                            Repository {activity.repo.name} created
-                        </a>
-                    </f:case>
-                    <f:case value="tag">
-                        <a href="https://github.com/{activity.repo.name}/releases/{activity.payload.ref_type}/{activity.payload.ref}" target="_blank" class="block">
-                            <i class="gh-icon fi-price-tag"></i> {activity.payload.ref_type} created {activity.payload.ref} in {activity.repo.name}
-                        </a>
-                        <f:if condition="{activity.payload.description}">
+                </a>
+                </div>
+            </f:if>
+            <f:if condition="{activity.type} == 'PushEvent'">
+                <div class="item">
+                    <a href="https://www.github.com/{activity.repo.name}/commits" target="_blank" class="block">
+                        <i class="gh-icon fi-repo-force-push"></i>
+                        Pushed to {activity.repo.name}
+                    </a>
+                    <div class="labelWrap">
+                        <f:for each="{activity.payload.commits}" as="commit">
                             <div>
                                 <span class="label commit">
-                                  {activity.payload.description}
+                                    <a href="https://www.github.com/{activity.repo.name}/commit/{commit.sha}">
+                                        <f:format.crop maxCharacters="7" append=" -">{commit.sha}</f:format.crop>
+                                    </a>
+                                    {commit.message}
                                 </span>
                             </div>
-                        </f:if>
-                    </f:case>
-                    <f:defaultCase>
-                        <a href="https://github.com/{activity.repo.name}/releases/{activity.payload.ref_type}/{activity.payload.ref}" target="_blank" class="block">
-                            <i class="gh-icon"></i> {activity.payload.ref_type} created {activity.payload.ref} in {activity.repo.name}
-                        </a>
-                        <div>
-                            <span class="label commit">
-                              {activity.payload.issue.title}
-                            </span>
-                        </div>
-                    </f:defaultCase>
-                </f:switch>
-            </div>
-        </f:if>
-        <f:if condition="{activity.type} == 'IssuesEvent'">
-            <div class="item">
-                <a href="{activity.payload.issue.html_url}" target="_blank" class="block">
-                    <i class="gh-icon fi-issue-{activity.payload.action}"></i>
-                    Issue #{activity.payload.issue.number} {activity.payload.action} in {activity.repo.name}
-                </a>
-                <div>
-                    <span class="label commit">
-                      {activity.payload.issue.title}
-                    </span>
+                        </f:for>
+                    </div>
                 </div>
-            </div>
-        </f:if>
-        <f:if condition="{activity.type} == 'WatchEvent'">
-            <div class="item">
-                <a href="{activity.payload.issue.html_url}" target="_blank" class="block">
-                    <i class="gh-icon fi-light-bulb"></i>
-                    Watch {activity.payload.action} on {activity.repo.name}
-                </a>
-            </div>
-        </f:if>
-        <f:if condition="{activity.type} == 'IssueCommentEvent'">
-            <div class="item">
-                <a href="{activity.payload.comment.html_url}" target="_blank" class="block">
-                    <i class="gh-icon fi-align-left"></i>
-                    Comment {activity.payload.action} on {activity.repo.name}
-                </a>
-                <div>
-                    <span class="label commit">
-                      {activity.payload.issue.title}
-                    </span>
-                </div>
-            </div>
-        </f:if>
-    </f:if>
+            </f:if>
 
-</f:for>
+            <f:if condition="{activity.type} == 'CreateEvent'">
+                <div class="item">
+                    <f:switch expression="{activity.payload.ref_type}">
+                        <f:case value="repository">
+                            <a href="{activity.repo.url}" target="_blank" class="block">
+                                <i class="gh-icon fi-repo"></i>
+                                Repository {activity.repo.name} created
+                            </a>
+                        </f:case>
+                        <f:case value="tag">
+                            <a href="https://github.com/{activity.repo.name}/releases/{activity.payload.ref_type}/{activity.payload.ref}" target="_blank" class="block">
+                                <i class="gh-icon fi-price-tag"></i> {activity.payload.ref_type} created {activity.payload.ref} in {activity.repo.name}
+                            </a>
+                            <f:if condition="{activity.payload.description}">
+                                <div>
+                                    <span class="label commit">
+                                      {activity.payload.description}
+                                    </span>
+                                </div>
+                            </f:if>
+                        </f:case>
+                        <f:defaultCase>
+                            <a href="https://github.com/{activity.repo.name}/releases/{activity.payload.ref_type}/{activity.payload.ref}" target="_blank" class="block">
+                                <i class="gh-icon"></i> {activity.payload.ref_type} created {activity.payload.ref} in {activity.repo.name}
+                            </a>
+                            <div>
+                                <span class="label commit">
+                                  {activity.payload.issue.title}
+                                </span>
+                            </div>
+                        </f:defaultCase>
+                    </f:switch>
+                </div>
+            </f:if>
+            <f:if condition="{activity.type} == 'IssuesEvent'">
+                <div class="item">
+                    <a href="{activity.payload.issue.html_url}" target="_blank" class="block">
+                        <i class="gh-icon fi-issue-{activity.payload.action}"></i>
+                        Issue #{activity.payload.issue.number} {activity.payload.action} in {activity.repo.name}
+                    </a>
+                    <div>
+                        <span class="label commit">
+                          {activity.payload.issue.title}
+                        </span>
+                    </div>
+                </div>
+            </f:if>
+            <f:if condition="{activity.type} == 'WatchEvent'">
+                <div class="item">
+                    <a href="{activity.payload.issue.html_url}" target="_blank" class="block">
+                        <i class="gh-icon fi-light-bulb"></i>
+                        Watch {activity.payload.action} on {activity.repo.name}
+                    </a>
+                </div>
+            </f:if>
+            <f:if condition="{activity.type} == 'IssueCommentEvent'">
+                <div class="item">
+                    <a href="{activity.payload.comment.html_url}" target="_blank" class="block">
+                        <i class="gh-icon fi-align-left"></i>
+                        Comment {activity.payload.action} on {activity.repo.name}
+                    </a>
+                    <div>
+                        <span class="label commit">
+                          {activity.payload.issue.title}
+                        </span>
+                    </div>
+                </div>
+            </f:if>
+        </f:if>
+
+    </f:for>
+</div>
+<div class="text-center">
+    <a class="showAll button">Show all ...</a>
+    <a class="hideAll button">Hide all ...</a>
+</div>

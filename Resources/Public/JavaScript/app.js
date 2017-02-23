@@ -45,16 +45,18 @@ $(document).ready(function () {
                 $(this).show();
             }
         });
+        $(this).hide().next().show();
     });
+
 
     $('.hideAll').click(function () {
         $(this).parent().prev().find('.item').each(function (index, el) {
             if(index > elementsToShow) {
                 console.log(index + ' > ' + elementsToShow);
-                MotionUI.animateOut($(this), 'hinge-in-from-top');
-                //$(this).hide();
+                MotionUI.animateOut($(this), 'hinge-out-from-top');
             }
         });
+        $(this).hide().prev().show();
     });
 
 });
