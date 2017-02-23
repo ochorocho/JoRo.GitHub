@@ -1,7 +1,7 @@
 privilegeTargets:
   Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
     'JoRo.GitHub:StandardControllerActions':
-      matcher: 'method(JoRo\GitHub\Controller\StandardController->(index)Action())'
+      matcher: 'method(JoRo\GitHub\Controller\StandardController->(index|gist)Action())'
 
 roles:
   'Neos.Flow:Everybody':

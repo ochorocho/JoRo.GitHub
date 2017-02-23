@@ -6,3 +6,11 @@ prototype(JoRo.GitHub:Plugin) {
     action = 'index'
     id = ${node.identifier}
 }
+
+prototype(JoRo.GitHub:Gist) < prototype(Neos.Neos:Plugin)
+prototype(JoRo.GitHub:Gist) {
+    package = 'JoRo.GitHub'
+    controller = 'Standard'
+    action = 'gist'
+    id = ${node.identifier}
+}

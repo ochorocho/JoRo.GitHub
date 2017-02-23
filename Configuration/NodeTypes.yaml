@@ -94,3 +94,50 @@
         inlineEditable: false
         inspector:
           group: responsive
+
+'JoRo.GitHub:Gist':
+  superTypes:
+    'Neos.Neos:Plugin': TRUE
+  ui:
+    label: 'GitHub Gist'
+    group: 'plugins'
+    icon: icon-map-marker
+    inspector:
+      groups:
+        githubAccount:
+          label: Account
+          position: 1
+        gist:
+          label: Gist
+          position: 2
+  options:
+    pluginViews:
+      ghOptions:
+        label: 'GitHub Gist'
+        controllerActions:
+          JoRo\GithHub\Controller\StandardController: ['gist']
+  properties:
+    username:
+      type: string
+      defaultValue: 'GitHub Username'
+      ui:
+        label: Username
+        inlineEditable: false
+        inspector:
+          group: githubAccount
+    token:
+      type: string
+      defaultValue: 'GitHub Auth Token'
+      ui:
+        label: Token
+        inlineEditable: false
+        inspector:
+          group: githubAccount
+    gist:
+      type: string
+      defaultValue: 'gistId'
+      ui:
+        label: Gist ID
+        inlineEditable: false
+        inspector:
+          group: gist

@@ -120,4 +120,21 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
             'layout' => $layout
         ]);
     }
+    
+    /**
+     * @return void
+     */
+    public function gistAction() {
+
+        $arguments = $this->request->getInternalArgument('__node')->getNodeData()->getProperties();
+        $id = $this->request->getInternalArgument('__node')->getNodeData()->getIdentifier();
+
+        // \Neos\Flow\var_dump($arguments);
+
+        $gistId = $arguments['gist'];
+
+        // <script src="https://gist.github.com/ochorocho/28069a99116b2bfd5073.js"></script>
+        $this->view->assign("gistId", $gistId);
+    }
+    
 }
