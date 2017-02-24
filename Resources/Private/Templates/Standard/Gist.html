@@ -4,7 +4,11 @@
 
 <f:section name="Content">
     <div class="gist">
-        <div class="label">{gistId}</div>
-        <script src="https://gist.github.com/ochorocho/{gistId}.js"></script>
+
+        <f:if condition="{gist.description}">
+            <h3>{gist.description}</h3>
+        </f:if>
+        <div class="label">{gist.id}</div>
+        <script src="{gistUrl}"></script>
     </div>
 </f:section>

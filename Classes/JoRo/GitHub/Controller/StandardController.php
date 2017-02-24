@@ -13,6 +13,18 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
 {
 
     /**
+     * @Flow\InjectConfiguration(path="credentials.username")
+     * @var string
+     */
+    protected $username;
+
+    /**
+     * @Flow\InjectConfiguration(path="credentials.token")
+     * @var string
+     */
+    protected $token;
+
+    /**
      * @return void
      */
     public function indexAction()
@@ -126,15 +138,28 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
      */
     public function gistAction() {
 
+
         $arguments = $this->request->getInternalArgument('__node')->getNodeData()->getProperties();
         $id = $this->request->getInternalArgument('__node')->getNodeData()->getIdentifier();
 
-        // \Neos\Flow\var_dump($arguments);
+        $api = new Github\Api;
+        $token = new \Milo\Github\OAuth\Token($this->token);
+
+        $api->setToken($token);
+        $api->getToken();
 
         $gistId = $arguments['gist'];
+        $gistUrl = "https://gist.github.com/" . $this->username ."/" . $gistId . ".js";
 
-        // <script src="https://gist.github.com/ochorocho/28069a99116b2bfd5073.js"></script>
-        $this->view->assign("gistId", $gistId);
+        /*
+            GET SINGLE GIST
+        */
+        $response = $api->get('/gists/:id', [
+            'id' => $gistId,
+        ]);
+        $gist = $api->decode($response);
+
+        $this->view->assign("gist", $gist);
+        $this->view->assign("gistUrl", $gistUrl);
     }
-    
 }

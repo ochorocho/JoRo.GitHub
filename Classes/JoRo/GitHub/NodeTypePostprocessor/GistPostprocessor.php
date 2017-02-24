@@ -9,9 +9,8 @@ namespace JoRo\GitHub\NodeTypePostprocessor;
 use Neos\Flow\Annotations as Flow;
 use Neos\ContentRepository\Domain\Model\NodeType;
 use Neos\ContentRepository\NodeTypePostprocessor\NodeTypePostprocessorInterface;
-use Neos\Media\Domain\Repository\TagRepository;
-use Neos\Flow\Persistence\PersistenceManagerInterface;
-use Neos\Media\Domain\Model\Tag;
+use Milo\Github;
+
 
 /**
  * Class GistPostprocessor
@@ -27,10 +26,11 @@ class GistPostprocessor implements NodeTypePostprocessorInterface {
 	protected $username;
 
 	/**
-	 * @var PersistenceManagerInterface
-	 * @Flow\Inject
+	 * @Flow\InjectConfiguration(path="credentials.token")
+	 * @var string
 	 */
-	protected $persistenceManager;
+	protected $token;
+
 	/**
 	 * Returns the processed Configuration
 	 *
@@ -41,38 +41,47 @@ class GistPostprocessor implements NodeTypePostprocessorInterface {
 	 */
 	public function process(NodeType $nodeType, array &$configuration, array $options) {
 
-		\Neos\Flow\var_dump($this->username);
-		\Neos\Flow\var_dump($options);
+		$api = new Github\Api;
+		$token = new \Milo\Github\OAuth\Token($this->token);
 
-		$options = array();
-		//$tags->rewind();
-//		$i = 0;
-//		while ($tags->valid()) {
-//			/** @var Tag $currentTag */
-//			$i++;
-//			$currentTag = $tags->current();
-//			$options[$currentTag->getLabel()] = array('label' => $currentTag->getLabel());
-//			$tags->next();
-//		}
+		$api->setToken($token);
+		$api->getToken();
 
-		$propertyName = 'tag';
+		$user = $this->username;
+
+		/*
+            GET AVAILABLE GISTS
+        */
+		$response = $api->get('/users/:user/gists', [
+			'user' => $user,
+		]);
+		$gists = $api->decode($response);
+
+		$options = [];
+		$options['empty'] = ['label' => ''];
+		foreach($gists as $gist) {
+			if(empty($gist->description)) {
+				$options[$gist->id] = ['label' => 'ID ' . $gist->id];
+			} else {
+				$options[$gist->id] = ['label' => $gist->description];
+			}
+		}
+
+		$propertyName = 'gist';
 		$configuration['properties'][$propertyName] = [
 			'type' => 'string',
 			'ui' => [
-				'label' => 'Show Images by Tag',
+				'label' => 'Select Gist to show',
 				'reloadIfChanged' => true,
 				'inspector' => [
 					'group' => 'gist',
 					'position' => 500,
 					'editor' => 'Neos.Neos/Inspector/Editors/SelectBoxEditor',
 					'editorOptions' => [
-						'values' => [
-							'bild' => ['label' => 'dasdsadasdsa']
-						],
+						'values' => $options
 					],
 				],
 			],
 		];
-
 	}
 }
