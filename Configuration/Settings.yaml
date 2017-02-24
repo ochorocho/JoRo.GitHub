@@ -3,3 +3,10 @@ TYPO3:
     typoScript:
       autoInclude:
         'JoRo.GitHub': TRUE
+
+
+JoRo:
+  GitHub:
+    credentials:
+      username: 'username'
+      token: 'GITHUB-TOKEN'

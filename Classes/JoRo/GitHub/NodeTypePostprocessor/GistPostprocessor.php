@@ -14,16 +14,18 @@ use Neos\Flow\Persistence\PersistenceManagerInterface;
 use Neos\Media\Domain\Model\Tag;
 
 /**
- * Class TagsPostprocessor
+ * Class GistPostprocessor
  *
  * @package JoRo\GitHub\GistPostprocessor
  */
 class GistPostprocessor implements NodeTypePostprocessorInterface {
+
 	/**
-	 * @var GistRepository
-	 * @Flow\Inject
+	 * @Flow\InjectConfiguration(path="credentials.username")
+	 * @var string
 	 */
-	protected $gistRepository;
+	protected $username;
+
 	/**
 	 * @var PersistenceManagerInterface
 	 * @Flow\Inject
@@ -38,21 +40,20 @@ class GistPostprocessor implements NodeTypePostprocessorInterface {
 	 * @return void
 	 */
 	public function process(NodeType $nodeType, array &$configuration, array $options) {
-		$tags = $this->tagRepository->findAll();
-		if ($tags->count() === 0) {
-			return;
-		}
+
+		\Neos\Flow\var_dump($this->username);
+		\Neos\Flow\var_dump($options);
 
 		$options = array();
-		$tags->rewind();
-		$i = 0;
-		while ($tags->valid()) {
-			/** @var Tag $currentTag */
-			$i++;
-			$currentTag = $tags->current();
-			$options[$currentTag->getLabel()] = array('label' => $currentTag->getLabel());
-			$tags->next();
-		}
+		//$tags->rewind();
+//		$i = 0;
+//		while ($tags->valid()) {
+//			/** @var Tag $currentTag */
+//			$i++;
+//			$currentTag = $tags->current();
+//			$options[$currentTag->getLabel()] = array('label' => $currentTag->getLabel());
+//			$tags->next();
+//		}
 
 		$propertyName = 'tag';
 		$configuration['properties'][$propertyName] = [
@@ -61,15 +62,17 @@ class GistPostprocessor implements NodeTypePostprocessorInterface {
 				'label' => 'Show Images by Tag',
 				'reloadIfChanged' => true,
 				'inspector' => [
-					'group' => 'TagGroup',
+					'group' => 'gist',
 					'position' => 500,
 					'editor' => 'Neos.Neos/Inspector/Editors/SelectBoxEditor',
 					'editorOptions' => [
-						'values' => $options,
+						'values' => [
+							'bild' => ['label' => 'dasdsadasdsa']
+						],
 					],
 				],
 			],
 		];
-						
+
 	}
 }

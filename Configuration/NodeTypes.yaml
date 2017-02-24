@@ -116,6 +116,9 @@
         label: 'GitHub Gist'
         controllerActions:
           JoRo\GithHub\Controller\StandardController: ['gist']
+  postprocessors:
+    GistPostprocessor:
+      postprocessor: JoRo\GitHub\NodeTypePostprocessor\GistPostprocessor
   properties:
     username:
       type: string
