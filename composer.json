@@ -3,7 +3,7 @@
     "type": "neos-package",
     "license": "GPL-3.0+",
     "require": {
-        "typo3/flow": "*",
+        "neos/flow": "*",
         "milo/github-api": "~1.4.0"
     },
     "name": "joro/github",
