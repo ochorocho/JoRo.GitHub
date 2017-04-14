@@ -1,13 +1,14 @@
 function displayResponsiveList() {
     $('.ghList, .ghTile').each(function () {
+        var elementsToShow = '';
         if(Foundation.utils.is_small_only()) {
-            var elementsToShow = $(this).attr('data-small');
+            elementsToShow = $(this).attr('data-small');
         }
         if(Foundation.utils.is_medium_only()) {
-            var elementsToShow = $(this).attr('data-medium');
+            elementsToShow = $(this).attr('data-medium');
         }
         if(Foundation.utils.is_large_up()) {
-            var elementsToShow = $(this).attr('data-large');
+            elementsToShow = $(this).attr('data-large');
         }
 
         $(this).find('.item').each(function(index, el) {
