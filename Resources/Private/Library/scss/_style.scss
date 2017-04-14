@@ -28,18 +28,18 @@
             position: absolute;
             background-color: rgba(255, 255, 255, 0.5);
             bottom: 4px;
-            left: 0px;
-            right: 0px;
+            left: 0;
+            right: 0;
             line-height: 1rem;
             padding: 5px 8px;
             color: #000000;
         }
     }
     .tabs-content .content {
-        margin-top: 0px;
+        margin-top: 0;
         padding: 6px 0;
     }
-    .tabs-content .content .th, .tabs-content .content .th img {
+    .tabs-content .content .th, .tabs-content .th img {
         display: block;
         width: 100%;
     }
@@ -54,7 +54,7 @@
     }
     .ellipsis {
         text-overflow: ellipsis;
-        text-overflow: "...";
+        text-overflow: '...';
         white-space: nowrap;
         overflow: hidden;
     }
@@ -62,12 +62,12 @@
         &.block {
             color: #ffffff;
             width: 100%;
-            font-size: 0.7rem;
+            font-size: .7rem;
             i {
                 font-size: 48px;
                 clear: both;
                 display: block;
-                margin-bottom: 0.3rem;
+                margin-bottom: .3rem;
             }
         }
         margin-bottom: 0;
@@ -112,7 +112,7 @@
 }
 
 .labelWrap {
-    padding: 0.4rem 0 0 0 !important;
+    padding: .4rem 0 0 0 !important;
 }
 
 .label.commit{
