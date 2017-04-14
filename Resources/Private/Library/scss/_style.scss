@@ -12,7 +12,7 @@
     }
 
     ul.tabs {
-        background-color: #EFEFEF;
+        background-color: #efefef;
     }
     .avatar {
         margin-left: 6px;
@@ -26,7 +26,7 @@
         }
         .githubName {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, .5);
             bottom: 4px;
             left: 0;
             right: 0;
@@ -73,7 +73,7 @@
         margin-bottom: 0;
     }
     .tabs dd > a, .tabs .tab-title > a {
-        padding: 0.9rem 1rem;
+        padding: .9rem 1rem;
     }
     .font40 {
         font-size: 1.9rem !important;
@@ -125,7 +125,7 @@
 
 .dialog {
     i {
-        margin-right: 0.5rem !important;
+        margin-right: .5rem !important;
     }
     .font40 {
         font-size: 1.9rem !important;
