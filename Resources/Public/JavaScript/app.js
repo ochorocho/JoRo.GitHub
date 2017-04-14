@@ -36,7 +36,6 @@ $(document).ready(function () {
         if(Foundation.utils.is_large_up()) {
             elementsToShow = $(this).parent().prev().attr('data-large');
         }
-        console.log(elementsToShow);
     });
 
     $('.showAll').click(function () {
@@ -53,7 +52,6 @@ $(document).ready(function () {
     $('.hideAll').click(function () {
         $(this).parent().prev().find('.item').each(function (index, el) {
             if(index > elementsToShow) {
-                console.log(index + ' > ' + elementsToShow);
                 MotionUI.animateOut($(this), 'hinge-out-from-top');
             }
         });
