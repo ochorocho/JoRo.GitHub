@@ -30,8 +30,9 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
     public function indexAction()
     {
 
-        $arguments = $this->request->getInternalArgument('__node')->getNodeData()->getProperties();
-        $id = $this->request->getInternalArgument('__node')->getNodeData()->getIdentifier();
+        $node = $this->request->getInternalArgument('__node')->getNodeData();
+        $arguments = $node->getProperties();
+        $id = $node->getIdentifier();
 
         $user = $arguments['username'];
         $tokenAuth = $arguments['token'];
@@ -133,8 +134,9 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
      */
     public function gistAction() {
 
-        $arguments = $this->request->getInternalArgument('__node')->getNodeData()->getProperties();
-        $id = $this->request->getInternalArgument('__node')->getNodeData()->getIdentifier();
+        $node = $this->request->getInternalArgument('__node')->getNodeData();
+        $arguments = $node->getProperties();
+        $id = $node->getIdentifier();
 
         $api = new Github\Api;
         $tokenAuth = new \Milo\Github\OAuth\Token($this->token);
