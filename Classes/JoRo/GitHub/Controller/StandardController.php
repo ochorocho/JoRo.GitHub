@@ -33,8 +33,6 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $arguments = $this->request->getInternalArgument('__node')->getNodeData()->getProperties();
         $id = $this->request->getInternalArgument('__node')->getNodeData()->getIdentifier();
 
-        // \Neos\Flow\var_dump($arguments);
-
         $username = $arguments['username'];
         $token = $arguments['token'];
         $activityCount = $arguments['activityCount'];
@@ -42,7 +40,7 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $small = $arguments['small'];
         $medium = $arguments['medium'];
         $large = $arguments['large'];
-        $layout = $arguments['layout'];
+        $layout = strtolower($arguments['layout']);
 
 
         if(empty($username) || empty($token)) {
@@ -51,7 +49,6 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
             $access = true;
             $api = new Github\Api;
             $token = new \Milo\Github\OAuth\Token($token);
-
 
             $api->setToken($token);
             $api->getToken();
@@ -138,7 +135,6 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
      */
     public function gistAction() {
 
-
         $arguments = $this->request->getInternalArgument('__node')->getNodeData()->getProperties();
         $id = $this->request->getInternalArgument('__node')->getNodeData()->getIdentifier();
 
@@ -160,6 +156,7 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $gist = $api->decode($response);
 
         $this->view->assign("gist", $gist);
+        $this->view->assign("id", $id);
         $this->view->assign("gistUrl", $gistUrl);
     }
 }

@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     var elementsToShow = '';
 
-    $('.showAll, .hideAll').click(function () {
+    $('.show-all, .hide-all').click(function () {
         if(Foundation.utils.is_small_only()) {
             elementsToShow = $(this).parent().prev().attr('data-small');
         }
@@ -38,7 +38,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.showAll').click(function () {
+    $('.show-all').click(function () {
         $(this).parent().prev().find('.item').each(function (el) {
             if($(this).is(":hidden")) {
                 MotionUI.animateIn($(this), 'hinge-in-from-top');
@@ -49,7 +49,7 @@ $(document).ready(function () {
     });
 
 
-    $('.hideAll').click(function () {
+    $('.hide-all').click(function () {
         $(this).parent().prev().find('.item').each(function (index, el) {
             if(index > elementsToShow) {
                 MotionUI.animateOut($(this), 'hinge-out-from-top');

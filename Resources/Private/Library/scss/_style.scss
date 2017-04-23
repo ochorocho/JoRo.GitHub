@@ -1,5 +1,4 @@
-.githubDetails {
-
+.github-details {
     .gh-tab {
         i {
             font-size: 40px;
@@ -11,7 +10,7 @@
         overflow: hidden;
     }
 
-    ul.tabs {
+    .tabs {
         background-color: #efefef;
     }
     .avatar {
@@ -24,7 +23,7 @@
             position: relative;
             margin: -5px auto;
         }
-        .githubName {
+        .github-name {
             position: absolute;
             background-color: rgba(255, 255, 255, .5);
             bottom: 4px;
@@ -78,14 +77,13 @@
     .font40 {
         font-size: 1.9rem !important;
     }
-    &.Tile {
+    &.tile {
          .button, button {
             padding: 1rem .3rem 1rem .3rem;
         }
     }
-
     // LIST
-    &.List {
+    &.list {
         .expanded {
             display: block;
         }
@@ -96,7 +94,7 @@
                 padding: 1rem .3rem 1rem .3rem;
             }
         }
-        .hideAll {
+        .hide-all {
             display: none;
         }
         .footer {
@@ -111,7 +109,7 @@
     }
 }
 
-.labelWrap {
+.label-wrap {
     padding: .4rem 0 0 0 !important;
 }
 
