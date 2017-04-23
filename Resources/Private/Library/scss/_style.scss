@@ -101,6 +101,7 @@
     }
 }
 
+
 .gist {
     .label {
         display: block;
@@ -108,23 +109,22 @@
 }
 
 .label-wrap {
-    padding: .4rem 0 0 0 !important;
+    padding: .4rem 0 0 0;
 }
 
 .label.commit{
-    margin: 0 !important;
+    margin: 0;
     text-align: left;
-    overflow: hidden !important;
-    white-space: normal !important;
-    display: inline-block !important;
+    overflow: hidden;
+    white-space: normal;
 }
 
 .dialog {
     i {
-        margin-right: .5rem !important;
+        margin-right: .5rem;
     }
     .font40 {
-        font-size: 1.9rem !important;
+        font-size: 1.9rem;
     }
 
     .rotate180 {
