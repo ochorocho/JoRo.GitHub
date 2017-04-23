@@ -62,13 +62,14 @@
             color: #ffffff;
             width: 100%;
             font-size: .7rem;
-            i {
-                font-size: 48px;
-                clear: both;
-                display: block;
-                margin-bottom: .3rem;
-            }
         }
+        &.block i {
+            font-size: 48px;
+            clear: both;
+            display: block;
+            margin-bottom: .3rem;
+        }
+
         margin-bottom: 0;
     }
     .tabs dd > a, .tabs .tab-title > a {
@@ -82,17 +83,15 @@
             padding: 1rem .3rem 1rem .3rem;
         }
     }
-    // LIST
+
     &.list {
         .expanded {
             display: block;
         }
-        .button {
-            &.transparent {
-                background: transparent;
-                color: #000;
-                padding: 1rem .3rem 1rem .3rem;
-            }
+        .button.transparent {
+            background: transparent;
+            color: #000;
+            padding: 1rem .3rem 1rem .3rem;
         }
         .hide-all {
             display: none;
