@@ -33,8 +33,8 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $arguments = $this->request->getInternalArgument('__node')->getNodeData()->getProperties();
         $id = $this->request->getInternalArgument('__node')->getNodeData()->getIdentifier();
 
-        $username = $arguments['username'];
-        $token = $arguments['token'];
+        $user = $arguments['username'];
+        $tokenAuth = $arguments['token'];
         $activityCount = $arguments['activityCount'];
         $repoCount = $arguments['repoCount'];
         $small = $arguments['small'];
@@ -43,17 +43,15 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $layout = strtolower($arguments['layout']);
 
 
-        if(empty($username) || empty($token)) {
+        if(empty($user) || empty($tokenAuth)) {
             $access = false;
         } else {
             $access = true;
             $api = new Github\Api;
-            $token = new \Milo\Github\OAuth\Token($token);
+            $tokenAuth = new \Milo\Github\OAuth\Token($tokenAuth);
 
-            $api->setToken($token);
+            $api->setToken($tokenAuth);
             $api->getToken();
-
-            $user = $username;
 
             /*
                 GET OWN REPOS ONLY
@@ -139,9 +137,9 @@ class StandardController extends \Neos\Flow\Mvc\Controller\ActionController
         $id = $this->request->getInternalArgument('__node')->getNodeData()->getIdentifier();
 
         $api = new Github\Api;
-        $token = new \Milo\Github\OAuth\Token($this->token);
+        $tokenAuth = new \Milo\Github\OAuth\Token($this->token);
 
-        $api->setToken($token);
+        $api->setToken($tokenAuth);
         $api->getToken();
 
         $gistId = $arguments['gist'];
